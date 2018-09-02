@@ -112,11 +112,6 @@ public class AuthArguments {
         }
 
         public AuthArguments build() {
-            if (auth == null || user == null || settings == null || version == null || os == null ||
-                    conf == null) {
-                throw new IllegalArgumentException("Missing fields");
-            }
-
             return new AuthArguments(this);
         }
     }

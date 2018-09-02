@@ -13,7 +13,7 @@ import java.util.List;
 
 public class NSRActivityIntent extends IntentService {
 
-	protected NSRActivityIntent() {
+	public NSRActivityIntent() {
 		super("NSRActivityIntent");
 	}
 

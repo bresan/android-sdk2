@@ -25,7 +25,7 @@ public class NSRNotification {
 	private static boolean channelcreated = false;
 
 	public static void sendNotification(final Context ctx, final String title, final String body, final String imageUrl, final PendingIntent pendingIntent) {
-		if (NSR.gracefulDegradate()) {
+		if (NSR.isInvalidAndroidVersion) {
 			return;
 		}
 		if (!channelcreated && Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {

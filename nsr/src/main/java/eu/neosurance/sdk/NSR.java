@@ -48,7 +48,7 @@ import eu.neosurance.sdk.tracer.power.PowerTracer;
 
 public class NSR implements TracerListener, AuthListener {
 
-    private static boolean isInvalidAndroidVersion = android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.LOLLIPOP;
+    public static boolean isInvalidAndroidVersion = android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.LOLLIPOP;
 
     protected String getOs() {
         return "Android";
@@ -76,18 +76,31 @@ public class NSR implements TracerListener, AuthListener {
 
 
     // Tracer related objects
-    private TracerFactory tracerFactory = new TracerFactory(context, this);
-    private PowerTracer powerTracer = tracerFactory.makePowerTracer();
-    private LocationTracer locationTracer = tracerFactory.makeLocationTracer();
-    private ActivityTracer activityTracer = tracerFactory.makeActivityTracer();
-    private ConnectionTracer connectionTracer = tracerFactory.makeConnectionTracer();
+    private TracerFactory tracerFactory;
+    private PowerTracer powerTracer;
+    private LocationTracer locationTracer;
+    private ActivityTracer activityTracer;
+    private ConnectionTracer connectionTracer;
 
     // Manager objects
-    private AuthManager authManager = new AuthManager(context, securityDelegate, this);
+    private AuthManager authManager;
 
+    private void initManagers() {
+    }
+
+    private void initTracers() {
+        tracerFactory = new TracerFactory(context, this);
+        powerTracer = tracerFactory.makePowerTracer();
+        locationTracer = tracerFactory.makeLocationTracer();
+        activityTracer = tracerFactory.makeActivityTracer();
+        connectionTracer = tracerFactory.makeConnectionTracer();
+    }
 
     private NSR(Context context) {
         this.context = context;
+
+        initTracers();
+        initManagers();
     }
 
     public static NSR getInstance(Context ctx) {
@@ -253,6 +266,8 @@ public class NSR implements TracerListener, AuthListener {
         }
         setData("securityDelegateClass", securityDelegate.getClass().getName());
         this.securityDelegate = securityDelegate;
+
+        authManager = new AuthManager(context, securityDelegate, this);
     }
 
     protected NSRWorkflowDelegate getWorkflowDelegate() {
@@ -690,6 +705,14 @@ public class NSR implements TracerListener, AuthListener {
     public void onTraceDone(String traceType, JSONObject payload) {
         try {
             crunchEvent(traceType, payload);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void authorize(NSRAuth nsrAuth) {
+        try {
+            authManager.authorize(nsrAuth, makeAuthArguments());
         } catch (Exception e) {
             e.printStackTrace();
         }
