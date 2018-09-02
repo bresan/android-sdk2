@@ -39,6 +39,8 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import eu.neosurance.sdk.utils.DeviceUtils;
+
 public class NSRActivityWebView extends AppCompatActivity {
 	private WebView webView;
 	private String photoCallback;
@@ -128,7 +130,7 @@ public class NSRActivityWebView extends AppCompatActivity {
 							message.put("api", settings.getString("base_url"));
 							message.put("token", nsr.getToken());
 							message.put("lang", nsr.getLang());
-							message.put("deviceUid", nsr.getDeviceUid());
+							message.put("deviceUid", DeviceUtils.getDeviceUid(NSRActivityWebView.this));
 							eval(body.getString("callBack") + "(" + message.toString() + ")");
 						}
 					});

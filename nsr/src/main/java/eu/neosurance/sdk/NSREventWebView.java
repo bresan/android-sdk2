@@ -16,6 +16,8 @@ import org.json.JSONObject;
 import java.util.List;
 import java.util.Locale;
 
+import eu.neosurance.sdk.utils.DeviceUtils;
+
 public class NSREventWebView {
 	private WebView webView = null;
 	private Context ctx;
@@ -82,7 +84,7 @@ public class NSREventWebView {
 								message.put("api", nsr.getSettings().getString("base_url"));
 								message.put("token", nsr.getToken());
 								message.put("lang", nsr.getLang());
-								message.put("deviceUid", nsr.getDeviceUid());
+								message.put("deviceUid", DeviceUtils.getDeviceUid(ctx));
 								eval(body.getString("callBack") + "(" + message.toString() + ")");
 							}
 						}

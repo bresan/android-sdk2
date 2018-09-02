@@ -8,6 +8,8 @@ import org.json.JSONObject;
 
 import java.util.Date;
 
+import eu.neosurance.sdk.utils.DateUtils;
+
 public class NSRUser {
 	private String code;
 	private String email;
@@ -51,7 +53,7 @@ public class NSRUser {
 			gender = jsonObject.getString("gender");
 		}
 		if (jsonObject.has("birthday")) {
-			birthday = NSR.jsonStringToDate(jsonObject.getString("birthday"));
+			birthday = DateUtils.jsonStringToDate(jsonObject.getString("birthday"));
 		}
 		if (jsonObject.has("address")) {
 			address = jsonObject.getString("address");
@@ -221,7 +223,7 @@ public class NSRUser {
 				jsonObject.put("gender", gender);
 			}
 			if (birthday != null) {
-				jsonObject.put("birthday", NSR.dateToJsonString(birthday));
+				jsonObject.put("birthday", DateUtils.dateToJsonString(birthday));
 			}
 			if (address != null) {
 				jsonObject.put("address", address);

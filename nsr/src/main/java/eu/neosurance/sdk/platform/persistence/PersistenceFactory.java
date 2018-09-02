@@ -10,7 +10,7 @@ public class PersistenceFactory {
         this.context = context;
     }
 
-    public PersistenceManager makePersistentManager() {
+    public PersistenceManager makePersistenceManager() {
         return new SharedPreferencesManager(this.context);
     }
 }

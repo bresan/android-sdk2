@@ -20,7 +20,13 @@ public class SharedPreferencesManager implements PersistenceManager {
 
     @Override
     public void storeJson(String key, JSONObject value) {
-        this.storeData(key, value.toString());
+        SharedPreferences.Editor editor = getSharedPreferences().edit();
+        if (value != null) {
+            editor.putString(key, value.toString());
+        } else {
+            editor.remove(key);
+        }
+        editor.commit();
     }
 
     @Override

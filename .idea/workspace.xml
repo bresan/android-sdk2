@@ -16,28 +16,85 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8352a59c-b88c-4cf9-9f23-bbcde93c6ed4" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileContent/fileContent.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/fileContent/fileContent.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/resourceHashesCache.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/resourceHashesCache.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/jarAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/jarAnalysis.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/javaCompile.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/javaCompile.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskHistory.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskJars.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskJars.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileChanges/last-build.bin" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileContent/fileContent.lock" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/resourceHashesCache.bin" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/jarAnalysis.bin" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/javaCompile.lock" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskHistory.bin" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskJars.bin" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_core_common_1_0_0_jar.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_core_common_1_1_0_jar.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_core_runtime_1_1_0.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_common_1_0_0_jar.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_common_1_1_0_jar.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_livedata_core_1_1_0.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_runtime_1_0_0.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_runtime_1_1_0.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_viewmodel_1_1_0.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_animated_vector_drawable_26_1_0.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_animated_vector_drawable_27_1_1.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_appcompat_v7_26_1_0.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_appcompat_v7_27_1_1.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_constraint_constraint_layout_1_1_2.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_constraint_constraint_layout_solver_1_1_2_jar.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_annotations_26_1_0_jar.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_annotations_27_1_1_jar.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_compat_26_1_0.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_compat_27_1_1.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_ui_26_1_0.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_ui_27_1_1.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_utils_26_1_0.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_utils_27_1_1.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_fragment_26_1_0.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_fragment_27_1_1.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_media_compat_26_1_0.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_v4_26_1_0.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_vector_drawable_26_1_0.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_vector_drawable_27_1_1.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_firebase_firebase_jobdispatcher_0_8_5.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_base_15_0_1.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_basement_15_0_1.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_location_15_0_1.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_maps_15_0_1.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_places_placereport_15_0_1.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_tasks_15_0_1.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_loopj_android_android_async_http_1_4_9_jar.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__cz_msebera_android_httpclient_4_3_6_jar.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12_jar.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3_jar.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/markdown-exported-files.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/markdown-navigator.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/markdown-navigator/profiles_settings.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
       <change beforePath="$PROJECT_DIR$/app/.gitignore" afterPath="$PROJECT_DIR$/app/.gitignore" />
+      <change beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
       <change beforePath="$PROJECT_DIR$/nsr/.gitignore" afterPath="$PROJECT_DIR$/nsr/.gitignore" />
+      <change beforePath="$PROJECT_DIR$/nsr/build.gradle" afterPath="$PROJECT_DIR$/nsr/build.gradle" />
       <change beforePath="$PROJECT_DIR$/nsr/nsr.iml" afterPath="$PROJECT_DIR$/nsr/nsr.iml" />
       <change beforePath="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/NSR.java" afterPath="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/NSR.java" />
-      <change beforePath="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/NSRActivityIntent.java" afterPath="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/NSRActivityIntent.java" />
-      <change beforePath="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/NSRNotification.java" afterPath="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/NSRNotification.java" />
-      <change beforePath="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/auth/AuthArguments.java" afterPath="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/auth/AuthArguments.java" />
+      <change beforePath="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/NSRActivityWebView.java" afterPath="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/NSRActivityWebView.java" />
+      <change beforePath="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/NSREventWebView.java" afterPath="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/NSREventWebView.java" />
+      <change beforePath="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/NSRUser.java" afterPath="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/NSRUser.java" />
+      <change beforePath="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/platform/persistence/PersistenceFactory.java" afterPath="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/platform/persistence/PersistenceFactory.java" />
+      <change beforePath="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/platform/persistence/SharedPreferencesManager.java" afterPath="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/platform/persistence/SharedPreferencesManager.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -54,7 +111,20 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
-        <projects_view />
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="android-sdk2" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
       </state>
     </system>
   </component>
@@ -63,39 +133,60 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="320">
+              <caret line="57" column="29" lean-forward="false" selection-start-line="57" selection-start-column="29" selection-end-line="57" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="NSR.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/NSR.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="449">
-              <caret line="540" column="24" lean-forward="true" selection-start-line="540" selection-start-column="24" selection-end-line="540" selection-end-column="24" />
+            <state relative-caret-position="169">
+              <caret line="333" column="0" lean-forward="false" selection-start-line="333" selection-start-column="0" selection-end-line="333" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#10783#10791#0" expanded="true" />
+                <element signature="e#21289#21290#0" expanded="true" />
+                <element signature="e#21356#21357#0" expanded="true" />
+                <element signature="e#21414#21415#0" expanded="true" />
+                <element signature="e#21477#21478#0" expanded="true" />
+                <element signature="e#21519#21520#0" expanded="true" />
+                <element signature="e#21590#21591#0" expanded="true" />
+                <element signature="e#21754#21755#0" expanded="true" />
+                <element signature="e#21821#21822#0" expanded="true" />
+                <element signature="e#21879#21880#0" expanded="true" />
+                <element signature="e#21942#21943#0" expanded="true" />
+                <element signature="e#22629#22630#0" expanded="true" />
+                <element signature="e#22698#22699#0" expanded="true" />
+                <element signature="e#22756#22757#0" expanded="true" />
+                <element signature="e#22823#22824#0" expanded="true" />
+                <element signature="e#22880#22881#0" expanded="true" />
+                <element signature="e#22921#22922#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NSRActivityIntent.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/NSRActivityIntent.java">
+      <file leaf-file-name="TracerManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/tracer/TracerManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="29" column="31" lean-forward="true" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
-              <folding>
-                <element signature="e#380#381#0" expanded="true" />
-                <element signature="e#413#414#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="307">
+              <caret line="46" column="2" lean-forward="false" selection-start-line="46" selection-start-column="2" selection-end-line="46" selection-end-column="2" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SetupUtils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/utils/SetupUtils.java">
+      <file leaf-file-name="NSRJobService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/NSRJobService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-              <folding>
-                <marker date="1535900393542" expanded="false" signature="2110:2118" ph="&lt;~&gt;" />
-              </folding>
+            <state relative-caret-position="120">
+              <caret line="11" column="12" lean-forward="false" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -103,35 +194,9 @@
       <file leaf-file-name="NSREventWebView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/NSREventWebView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="98" column="17" lean-forward="false" selection-start-line="98" selection-start-column="17" selection-end-line="98" selection-end-column="17" />
-              <folding>
-                <element signature="e#2782#2986#0" expanded="true" />
-                <element signature="e#2985#2986#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AndroidLocationManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/platform/location/AndroidLocationManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="55" column="39" lean-forward="false" selection-start-line="55" selection-start-column="39" selection-end-line="55" selection-end-column="39" />
+            <state relative-caret-position="-646">
+              <caret line="21" column="12" lean-forward="false" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AuthManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/auth/AuthManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="58" column="57" lean-forward="false" selection-start-line="58" selection-start-column="57" selection-end-line="58" selection-end-column="57" />
-              <folding>
-                <element signature="e#1993#3587#0" expanded="true" />
-                <element signature="e#3586#3587#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -139,185 +204,52 @@
       <file leaf-file-name="NSRActivityWebView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/NSRActivityWebView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="123" column="24" lean-forward="false" selection-start-line="123" selection-start-column="24" selection-end-line="123" selection-end-column="24" />
-              <folding>
-                <element signature="e#3814#4280#0" expanded="true" />
-                <element signature="e#4279#4280#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="String.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-26/android.jar!/java/lang/String.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="128" column="19" lean-forward="false" selection-start-line="128" selection-start-column="19" selection-end-line="128" selection-end-column="19" />
-              <folding>
-                <marker date="1535827847873" expanded="false" signature="0:104" ph="/.../" />
-                <marker date="1535827847873" expanded="false" signature="133:286" ph="..." />
-                <marker date="1535827847873" expanded="false" signature="468:479" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="515:521" ph=" }" />
-                <marker date="1535827847873" expanded="false" signature="557:568" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="604:610" ph=" }" />
-                <marker date="1535827847873" expanded="false" signature="643:654" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="690:696" ph=" }" />
-                <marker date="1535827847873" expanded="false" signature="752:763" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="799:805" ph=" }" />
-                <marker date="1535827847873" expanded="false" signature="865:876" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="912:918" ph=" }" />
-                <marker date="1535827847873" expanded="true" signature="924:942" ph="/**...*/" />
-                <marker date="1535827847873" expanded="true" signature="1026:1078" ph="{...}" />
-                <marker date="1535827847873" expanded="true" signature="1084:1102" ph="/**...*/" />
-                <marker date="1535827847873" expanded="false" signature="1162:1173" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="1209:1215" ph=" }" />
-                <marker date="1535827847873" expanded="true" signature="1329:1381" ph="{...}" />
-                <marker date="1535827847873" expanded="true" signature="1456:1508" ph="{...}" />
-                <marker date="1535827847873" expanded="true" signature="1598:1650" ph="{...}" />
-                <marker date="1535827847873" expanded="false" signature="1700:1711" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="1747:1753" ph=" }" />
-                <marker date="1535827847873" expanded="false" signature="1810:1821" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="1857:1863" ph=" }" />
-                <marker date="1535827847873" expanded="false" signature="1896:1907" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="1943:1949" ph=" }" />
-                <marker date="1535827847873" expanded="false" signature="1989:2000" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="2036:2042" ph=" }" />
-                <marker date="1535827847873" expanded="false" signature="2084:2095" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="2131:2137" ph=" }" />
-                <marker date="1535827847873" expanded="false" signature="2162:2173" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="2209:2215" ph=" }" />
-                <marker date="1535827847873" expanded="false" signature="2245:2256" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="2292:2298" ph=" }" />
-                <marker date="1535827847873" expanded="false" signature="2379:2390" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="2426:2432" ph=" }" />
-                <marker date="1535827847873" expanded="false" signature="2475:2486" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="2522:2528" ph=" }" />
-                <marker date="1535827847873" expanded="false" signature="2589:2600" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="2636:2642" ph=" }" />
-                <marker date="1535827847873" expanded="true" signature="2710:2762" ph="{...}" />
-                <marker date="1535827847873" expanded="true" signature="2841:2893" ph="{...}" />
-                <marker date="1535827847873" expanded="true" signature="2899:2917" ph="/**...*/" />
-                <marker date="1535827847873" expanded="true" signature="3011:3063" ph="{...}" />
-                <marker date="1535827847873" expanded="true" signature="3148:3200" ph="{...}" />
-                <marker date="1535827847873" expanded="false" signature="3245:3256" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="3292:3298" ph=" }" />
-                <marker date="1535827847873" expanded="false" signature="3328:3339" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="3375:3381" ph=" }" />
-                <marker date="1535827847873" expanded="true" signature="3425:3436" ph=" { " />
-                <marker date="1535827847873" expanded="true" signature="3472:3478" ph=" }" />
-                <marker date="1535827847873" expanded="false" signature="3529:3540" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="3576:3582" ph=" }" />
-                <marker date="1535827847873" expanded="false" signature="3633:3644" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="3680:3686" ph=" }" />
-                <marker date="1535827847873" expanded="false" signature="3745:3756" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="3792:3798" ph=" }" />
-                <marker date="1535827847873" expanded="false" signature="3893:3904" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="3940:3946" ph=" }" />
-                <marker date="1535827847873" expanded="true" signature="4030:4082" ph="{...}" />
-                <marker date="1535827847873" expanded="true" signature="4186:4238" ph="{...}" />
-                <marker date="1535827847873" expanded="false" signature="4297:4308" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="4344:4350" ph=" }" />
-                <marker date="1535827847873" expanded="false" signature="4396:4407" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="4443:4449" ph=" }" />
-                <marker date="1535827847873" expanded="false" signature="4493:4504" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="4540:4546" ph=" }" />
-                <marker date="1535827847873" expanded="false" signature="4573:4584" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="4620:4626" ph=" }" />
-                <marker date="1535827847873" expanded="false" signature="4658:4669" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="4705:4711" ph=" }" />
-                <marker date="1535827847873" expanded="false" signature="4758:4769" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="4805:4811" ph=" }" />
-                <marker date="1535827847873" expanded="false" signature="4847:4858" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="4894:4900" ph=" }" />
-                <marker date="1535827847873" expanded="false" signature="4951:4962" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="4998:5004" ph=" }" />
-                <marker date="1535827847873" expanded="false" signature="5040:5051" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="5087:5093" ph=" }" />
-                <marker date="1535827847873" expanded="false" signature="5144:5155" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="5191:5197" ph=" }" />
-                <marker date="1535827847873" expanded="false" signature="5237:5248" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="5284:5290" ph=" }" />
-                <marker date="1535827847873" expanded="false" signature="5345:5356" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="5392:5398" ph=" }" />
-                <marker date="1535827847873" expanded="false" signature="5443:5454" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="5490:5496" ph=" }" />
-                <marker date="1535827847873" expanded="false" signature="5555:5566" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="5602:5608" ph=" }" />
-                <marker date="1535827847873" expanded="true" signature="5676:5728" ph="{...}" />
-                <marker date="1535827847873" expanded="false" signature="5830:5841" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="5877:5883" ph=" }" />
-                <marker date="1535827847873" expanded="false" signature="5925:5936" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="5972:5978" ph=" }" />
-                <marker date="1535827847873" expanded="false" signature="6023:6034" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="6070:6076" ph=" }" />
-                <marker date="1535827847873" expanded="true" signature="6143:6195" ph="{...}" />
-                <marker date="1535827847873" expanded="true" signature="6260:6312" ph="{...}" />
-                <marker date="1535827847873" expanded="true" signature="6387:6439" ph="{...}" />
-                <marker date="1535827847873" expanded="false" signature="6491:6502" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="6538:6544" ph=" }" />
-                <marker date="1535827847873" expanded="false" signature="6585:6596" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="6632:6638" ph=" }" />
-                <marker date="1535827847873" expanded="true" signature="6720:6772" ph="{...}" />
-                <marker date="1535827847873" expanded="true" signature="6871:6923" ph="{...}" />
-                <marker date="1535827847873" expanded="false" signature="6969:6980" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="7016:7022" ph=" }" />
-                <marker date="1535827847873" expanded="false" signature="7055:7066" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="7102:7108" ph=" }" />
-                <marker date="1535827847873" expanded="false" signature="7154:7165" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="7201:7207" ph=" }" />
-                <marker date="1535827847873" expanded="false" signature="7240:7251" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="7287:7293" ph=" }" />
-                <marker date="1535827847873" expanded="false" signature="7319:7330" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="7366:7372" ph=" }" />
-                <marker date="1535827847873" expanded="false" signature="7402:7413" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="7449:7455" ph=" }" />
-                <marker date="1535827847873" expanded="true" signature="7561:7613" ph="{...}" />
-                <marker date="1535827847873" expanded="true" signature="7688:7740" ph="{...}" />
-                <marker date="1535827847873" expanded="false" signature="7786:7797" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="7833:7839" ph=" }" />
-                <marker date="1535827847873" expanded="false" signature="7886:7897" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="7933:7939" ph=" }" />
-                <marker date="1535827847873" expanded="true" signature="8010:8062" ph="{...}" />
-                <marker date="1535827847873" expanded="true" signature="8137:8189" ph="{...}" />
-                <marker date="1535827847873" expanded="false" signature="8240:8251" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="8287:8293" ph=" }" />
-                <marker date="1535827847873" expanded="false" signature="8338:8349" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="8385:8391" ph=" }" />
-                <marker date="1535827847873" expanded="false" signature="8433:8444" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="8480:8486" ph=" }" />
-                <marker date="1535827847873" expanded="false" signature="8527:8538" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="8574:8580" ph=" }" />
-                <marker date="1535827847873" expanded="false" signature="8622:8633" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="8669:8675" ph=" }" />
-                <marker date="1535827847873" expanded="false" signature="8718:8729" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="8765:8771" ph=" }" />
-                <marker date="1535827847873" expanded="false" signature="8815:8826" ph=" { " />
-                <marker date="1535827847873" expanded="false" signature="8862:8868" ph=" }" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NSRNotification.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/NSRNotification.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="27" column="39" lean-forward="false" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
+            <state relative-caret-position="727">
+              <caret line="132" column="101" lean-forward="false" selection-start-line="132" selection-start-column="101" selection-end-line="132" selection-end-column="101" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AuthArguments.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/auth/AuthArguments.java">
+      <file leaf-file-name="NSRUser.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/NSRUser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="105" column="24" lean-forward="false" selection-start-line="105" selection-start-column="24" selection-end-line="105" selection-end-column="24" />
+            <state relative-caret-position="252">
+              <caret line="55" column="33" lean-forward="false" selection-start-line="55" selection-start-column="33" selection-end-line="55" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConfigurationManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/configuration/ConfigurationManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="8" column="55" lean-forward="false" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="55" />
               <folding>
-                <element signature="e#2323#2324#0" expanded="true" />
-                <element signature="e#2377#2378#0" expanded="true" />
+                <element signature="e#505#506#0" expanded="true" />
+                <element signature="e#563#564#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PersistenceManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/platform/persistence/PersistenceManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="11" lean-forward="false" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SharedPreferencesManager.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/platform/persistence/SharedPreferencesManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="23" column="28" lean-forward="false" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -336,9 +268,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>initLoca</find>
-      <find>locationClient</find>
-      <find>locat</find>
       <find>activity</find>
       <find>initAc</find>
       <find>lastActivity =</find>
@@ -365,7 +294,10 @@
       <find>setAppU</find>
       <find>authManager</find>
       <find>makeAuth</find>
-      <find>securityDelegate =</find>
+      <find>26.</find>
+      <find>27.</find>
+      <find>getSharedP</find>
+      <find>ctx =</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -3355,8 +3287,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/tracer/TracerContract.java" />
-        <option value="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/tracer/BaseTracer.java" />
         <option value="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/platform/location/LocationManager.java" />
         <option value="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/platform/location/AndroidLocationManager.java" />
         <option value="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/tracer/ActivityTracer.java" />
@@ -3373,14 +3303,12 @@
         <option value="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/utils/AuthManager.java" />
         <option value="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/platform/persistence/PersistenceFactory.java" />
         <option value="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/platform/persistence/PersistenceManager.java" />
-        <option value="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/platform/persistence/SharedPreferencesManager.java" />
         <option value="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/user/UserManager.java" />
         <option value="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/request/RequestManager.java" />
         <option value="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/action/ActionManager.java" />
         <option value="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/utils/DateUtils.java" />
         <option value="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/utils/DeviceUtils.java" />
         <option value="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/persistence/PersistenceManager.java" />
-        <option value="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/NSRUser.java" />
         <option value="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/tracer/activity/ActivityTracer.java" />
         <option value="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/tracer/connection/ConnectionTracer.java" />
         <option value="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/tracer/location/LocationTracer.java" />
@@ -3390,7 +3318,6 @@
         <option value="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/platform/connection/AndroidConnectionManager.java" />
         <option value="$PROJECT_DIR$/nsr/src/androidTest/java/eu/neosurance/sdk/platform/connection/AndroidConnectionManagerTest.java" />
         <option value="$PROJECT_DIR$/nsr/src/test/java/eu/neosurance/sdk/platform/connection/AndroidConnectionManagerTest.java" />
-        <option value="$PROJECT_DIR$/nsr/build.gradle" />
         <option value="$PROJECT_DIR$/nsr/src/androidTest/java/eu/neosurance/sdk/platform/AndroidConnectionManagerTest.java" />
         <option value="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/tracer/Tracer.java" />
         <option value="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/tracer/power/PowerTracer.java" />
@@ -3398,14 +3325,19 @@
         <option value="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/configuration/ConfigurationManager.java" />
         <option value="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/auth/AuthManager.java" />
         <option value="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/auth/AuthListener.java" />
-        <option value="$PROJECT_DIR$/app/.gitignore" />
         <option value="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/utils/SetupUtils.java" />
         <option value="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/tracer/TracerManager.java" />
         <option value="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/NSRNotification.java" />
-        <option value="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/NSRActivityWebView.java" />
         <option value="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/auth/AuthArguments.java" />
-        <option value="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/NSR.java" />
         <option value="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/NSRActivityIntent.java" />
+        <option value="$PROJECT_DIR$/nsr/build.gradle" />
+        <option value="$PROJECT_DIR$/nsr/.gitignore" />
+        <option value="$PROJECT_DIR$/app/.gitignore" />
+        <option value="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/NSRUser.java" />
+        <option value="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/NSRActivityWebView.java" />
+        <option value="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/NSREventWebView.java" />
+        <option value="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/NSR.java" />
+        <option value="$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/platform/persistence/SharedPreferencesManager.java" />
       </list>
     </option>
   </component>
@@ -3432,150 +3364,95 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
             <path>
               <item name="android-sdk2" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="nsr" type="e9137016:NonAndroidModuleNode" />
             </path>
             <path>
               <item name="android-sdk2" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="nsr" type="e9137016:NonAndroidModuleNode" />
+              <item name="java" type="f7eae187:NonAndroidSourceTypeNode" />
             </path>
             <path>
               <item name="android-sdk2" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="eu" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="nsr" type="e9137016:NonAndroidModuleNode" />
+              <item name="java" type="f7eae187:NonAndroidSourceTypeNode" />
+              <item name="eu" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="android-sdk2" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="eu" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="nsr" type="e9137016:NonAndroidModuleNode" />
+              <item name="java" type="f7eae187:NonAndroidSourceTypeNode" />
+              <item name="eu" type="462c0819:PsiDirectoryNode" />
               <item name="neosurance" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="android-sdk2" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="eu" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="neosurance" type="462c0819:PsiDirectoryNode" />
-              <item name="nsrsample" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="android-sdk2" type="1abcf292:AndroidViewProjectNode" />
-              <item name="nsr" type="feadf853:AndroidModuleNode" />
-            </path>
-            <path>
-              <item name="android-sdk2" type="1abcf292:AndroidViewProjectNode" />
-              <item name="nsr" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="android-sdk2" type="1abcf292:AndroidViewProjectNode" />
-              <item name="nsr" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="eu" type="cbb59c9e:AndroidPsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="android-sdk2" type="1abcf292:AndroidViewProjectNode" />
-              <item name="nsr" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="eu" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="neosurance" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="android-sdk2" type="1abcf292:AndroidViewProjectNode" />
-              <item name="nsr" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="eu" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="nsr" type="e9137016:NonAndroidModuleNode" />
+              <item name="java" type="f7eae187:NonAndroidSourceTypeNode" />
+              <item name="eu" type="462c0819:PsiDirectoryNode" />
               <item name="neosurance" type="462c0819:PsiDirectoryNode" />
               <item name="sdk" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="android-sdk2" type="1abcf292:AndroidViewProjectNode" />
-              <item name="nsr" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="eu" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="neosurance" type="462c0819:PsiDirectoryNode" />
-              <item name="sdk" type="462c0819:PsiDirectoryNode" />
-              <item name="auth" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="android-sdk2" type="1abcf292:AndroidViewProjectNode" />
-              <item name="nsr" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="eu" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="nsr" type="e9137016:NonAndroidModuleNode" />
+              <item name="java" type="f7eae187:NonAndroidSourceTypeNode" />
+              <item name="eu" type="462c0819:PsiDirectoryNode" />
               <item name="neosurance" type="462c0819:PsiDirectoryNode" />
               <item name="sdk" type="462c0819:PsiDirectoryNode" />
               <item name="configuration" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="android-sdk2" type="1abcf292:AndroidViewProjectNode" />
-              <item name="nsr" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="eu" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="nsr" type="e9137016:NonAndroidModuleNode" />
+              <item name="java" type="f7eae187:NonAndroidSourceTypeNode" />
+              <item name="eu" type="462c0819:PsiDirectoryNode" />
               <item name="neosurance" type="462c0819:PsiDirectoryNode" />
               <item name="sdk" type="462c0819:PsiDirectoryNode" />
               <item name="platform" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="android-sdk2" type="1abcf292:AndroidViewProjectNode" />
-              <item name="nsr" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="eu" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="nsr" type="e9137016:NonAndroidModuleNode" />
+              <item name="java" type="f7eae187:NonAndroidSourceTypeNode" />
+              <item name="eu" type="462c0819:PsiDirectoryNode" />
               <item name="neosurance" type="462c0819:PsiDirectoryNode" />
               <item name="sdk" type="462c0819:PsiDirectoryNode" />
               <item name="platform" type="462c0819:PsiDirectoryNode" />
-              <item name="connection" type="462c0819:PsiDirectoryNode" />
+              <item name="persistence" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="android-sdk2" type="1abcf292:AndroidViewProjectNode" />
-              <item name="nsr" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="eu" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="nsr" type="e9137016:NonAndroidModuleNode" />
+              <item name="java" type="f7eae187:NonAndroidSourceTypeNode" />
+              <item name="eu" type="462c0819:PsiDirectoryNode" />
               <item name="neosurance" type="462c0819:PsiDirectoryNode" />
               <item name="sdk" type="462c0819:PsiDirectoryNode" />
               <item name="tracer" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="android-sdk2" type="1abcf292:AndroidViewProjectNode" />
-              <item name="nsr" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="eu" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="neosurance" type="462c0819:PsiDirectoryNode" />
-              <item name="sdk" type="462c0819:PsiDirectoryNode" />
-              <item name="tracer" type="462c0819:PsiDirectoryNode" />
-              <item name="power" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="android-sdk2" type="1abcf292:AndroidViewProjectNode" />
-              <item name="nsr" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="eu" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="neosurance" type="462c0819:PsiDirectoryNode" />
-              <item name="sdk" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="android-sdk2" type="1abcf292:AndroidViewProjectNode" />
-              <item name="nsr" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="eu" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="nsr" type="e9137016:NonAndroidModuleNode" />
+              <item name="java" type="f7eae187:NonAndroidSourceTypeNode" />
+              <item name="eu" type="462c0819:PsiDirectoryNode" />
               <item name="neosurance" type="462c0819:PsiDirectoryNode" />
               <item name="sdk" type="462c0819:PsiDirectoryNode" />
               <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="android-sdk2" type="1abcf292:AndroidViewProjectNode" />
+              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -3594,62 +3471,11 @@
               <item name="nsr" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="android-sdk2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="android-sdk2" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="nsr" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="androidTest" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="android-sdk2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="android-sdk2" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="nsr" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="androidTest" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="android-sdk2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="android-sdk2" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="nsr" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="androidTest" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="eu" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="android-sdk2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="android-sdk2" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="nsr" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="androidTest" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="eu" type="462c0819:PsiDirectoryNode" />
-              <item name="neosurance" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="android-sdk2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="android-sdk2" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="nsr" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="androidTest" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="eu" type="462c0819:PsiDirectoryNode" />
-              <item name="neosurance" type="462c0819:PsiDirectoryNode" />
-              <item name="sdk" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="android-sdk2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="android-sdk2" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="nsr" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -3658,7 +3484,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="sync.plugin.last.upgrade.timestamp" value="1535829372430" />
     <property name="device.picker.selection" value="36d4597e7d05" />
-    <property name="android.project.structure.last.selected" value="app" />
+    <property name="android.project.structure.last.selected" value="nsr" />
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="DEBUGGABLE_DEVICE" value="xiaomi-redmi_5a-36d4597e7d05" />
     <property name="DEBUGGABLE_PROCESS" value="eu.neosurance.nsrsample" />
@@ -3719,10 +3545,6 @@
       </option>
       <envs />
       <patterns />
-      <method>
-        <option name="Make" enabled="false" />
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
     </configuration>
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -3996,63 +3818,39 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32711443" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.329602" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Fabric" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Code Iris" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31094527" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Build" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3283582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39925373" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39925373" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Code Iris" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5872675" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329602" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329602" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3283582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Fabric" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329602" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -4092,131 +3890,22 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/platform/persistence/SharedPreferencesManager.java</url>
-          <line>22</line>
-          <properties />
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/tracer/location/LocationTracerFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="11" column="11" lean-forward="false" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/tracer/location/LocationTracer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="34" column="60" lean-forward="false" selection-start-line="34" selection-start-column="60" selection-end-line="34" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-26/android.jar!/android/net/ConnectivityManager.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="54" column="28" lean-forward="false" selection-start-line="54" selection-start-column="28" selection-end-line="54" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/SetupUtils.java" />
     <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/action/ActionManager.java" />
     <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/platform/connection/NetworkManager.java" />
     <entry file="file://$PROJECT_DIR$/nsr/src/androidTest/java/eu/neosurance/sdk/platform/connection/AndroidConnectionManagerTest.java" />
-    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/tracer/connection/ConnectionTracerFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="21" column="54" lean-forward="false" selection-start-line="21" selection-start-column="54" selection-end-line="21" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nsr/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="27" lean-forward="false" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/tracer/connection/ConnectionTracerFactory.java" />
     <entry file="file://$PROJECT_DIR$/nsr/src/androidTest/java/eu/neosurance/sdk/platform/AndroidConnectionManagerTest.java" />
-    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/tracer/activity/ActivityTracerFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding>
-            <element signature="e#649#650#0" expanded="false" />
-            <element signature="e#707#708#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/tracer/activity/ActivityTracer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="46" column="35" lean-forward="false" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="35" />
-          <folding>
-            <element signature="e#1114#1115#0" expanded="false" />
-            <element signature="e#1165#1166#0" expanded="false" />
-            <element signature="e#1204#1205#0" expanded="false" />
-            <element signature="e#1260#1261#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/platform/persistence/PersistenceManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/platform/persistence/PersistenceFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="12" column="25" lean-forward="false" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/platform/location/LocationManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/platform/activity/ActivityManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="29" lean-forward="true" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/platform/activity/AndroidActivityManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="12" column="24" lean-forward="false" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1207#1208#0" expanded="false" />
-            <element signature="e#1276#1277#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/tracer/activity/ActivityTracerFactory.java" />
+    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/tracer/activity/ActivityTracer.java" />
+    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/platform/persistence/PersistenceFactory.java" />
+    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/platform/location/LocationManager.java" />
+    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/platform/activity/ActivityManager.java" />
+    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/platform/activity/AndroidActivityManager.java" />
     <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/NSRLocationIntent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="164">
@@ -4225,51 +3914,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/auth/AuthListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="1" lean-forward="false" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/tracer/connection/ConnectionTracer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="51" column="5" lean-forward="false" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
-          <folding>
-            <element signature="e#1672#1673#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/eu/neosurance/nsrsample/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="82" column="41" lean-forward="false" selection-start-line="82" selection-start-column="41" selection-end-line="82" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/platform/persistence/SharedPreferencesManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="33" column="24" lean-forward="false" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
-          <folding>
-            <element signature="e#658#659#0" expanded="false" />
-            <element signature="e#711#712#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/auth/AuthListener.java" />
+    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/tracer/connection/ConnectionTracer.java" />
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -4278,148 +3924,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/NSRJobService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/utils/RequestManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/utils/PermissionUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="9" column="108" lean-forward="false" selection-start-line="9" selection-start-column="108" selection-end-line="9" selection-end-column="108" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/utils/DeviceUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="6" column="33" lean-forward="false" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/utils/DateUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/utils/ActionManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="26" lean-forward="false" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/user/UserManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/tracer/TracerListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/tracer/TracerFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/tracer/Tracer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="1" lean-forward="false" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/tracer/power/PowerTracer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="39" column="52" lean-forward="false" selection-start-line="39" selection-start-column="52" selection-end-line="39" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/tracer/power/PowerTracerFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="13" column="22" lean-forward="false" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/platform/connection/ConnectionManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="11" lean-forward="false" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/platform/connection/AndroidConnectionManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/platform/connection/ConnectionType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/configuration/ConfigurationManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="27" lean-forward="false" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#399#400#0" expanded="false" />
-            <element signature="e#461#462#0" expanded="false" />
-            <element signature="e#505#506#0" expanded="false" />
-            <element signature="e#563#564#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/tracer/TracerManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="56" column="2" lean-forward="false" selection-start-line="56" selection-start-column="2" selection-end-line="56" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/utils/RequestManager.java" />
+    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/utils/PermissionUtils.java" />
+    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/utils/DeviceUtils.java" />
+    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/utils/DateUtils.java" />
+    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/utils/ActionManager.java" />
+    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/user/UserManager.java" />
+    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/tracer/TracerListener.java" />
+    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/tracer/TracerFactory.java" />
+    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/tracer/Tracer.java" />
+    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/tracer/power/PowerTracer.java" />
+    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/tracer/power/PowerTracerFactory.java" />
+    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/platform/connection/ConnectionManager.java" />
+    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/platform/connection/AndroidConnectionManager.java" />
+    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/platform/connection/ConnectionType.java" />
     <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/NSRNotification.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -4428,10 +3946,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/utils/SetupUtils.java" />
+    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/platform/location/AndroidLocationManager.java" />
+    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/auth/AuthArguments.java" />
+    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/auth/AuthManager.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/eu/neosurance/nsrsample/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="25" column="47" lean-forward="false" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nsr/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="9" lean-forward="false" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-26/android.jar!/java/lang/String.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="128" column="19" lean-forward="false" selection-start-line="128" selection-start-column="19" selection-end-line="128" selection-end-column="19" />
+        <state relative-caret-position="351">
+          <caret line="146" column="33" lean-forward="false" selection-start-line="146" selection-start-column="33" selection-end-line="146" selection-end-column="33" />
           <folding>
             <marker date="1535827847873" expanded="false" signature="0:104" ph="/.../" />
             <marker date="1535827847873" expanded="false" signature="133:286" ph="..." />
@@ -4576,86 +4130,120 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/NSRActivityWebView.java">
+    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/NSRActivityIntent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="123" column="24" lean-forward="false" selection-start-line="123" selection-start-column="24" selection-end-line="123" selection-end-column="24" />
+        <state relative-caret-position="165">
+          <caret line="22" column="31" lean-forward="false" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nsr/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="485">
+          <caret line="64" column="18" lean-forward="false" selection-start-line="64" selection-start-column="18" selection-end-line="64" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="57" column="29" lean-forward="false" selection-start-line="57" selection-start-column="29" selection-end-line="57" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/configuration/ConfigurationManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="8" column="55" lean-forward="false" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="55" />
           <folding>
-            <element signature="e#3814#4280#0" expanded="true" />
-            <element signature="e#4279#4280#0" expanded="true" />
+            <element signature="e#505#506#0" expanded="true" />
+            <element signature="e#563#564#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/utils/SetupUtils.java">
+    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/platform/persistence/PersistenceManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <marker date="1535900393542" expanded="false" signature="2110:2118" ph="&lt;~&gt;" />
-          </folding>
+        <state relative-caret-position="120">
+          <caret line="8" column="11" lean-forward="false" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/NSRUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="55" column="33" lean-forward="false" selection-start-line="55" selection-start-column="33" selection-end-line="55" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/NSRActivityWebView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="727">
+          <caret line="132" column="101" lean-forward="false" selection-start-line="132" selection-start-column="101" selection-end-line="132" selection-end-column="101" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/NSREventWebView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="98" column="17" lean-forward="false" selection-start-line="98" selection-start-column="17" selection-end-line="98" selection-end-column="17" />
-          <folding>
-            <element signature="e#2782#2986#0" expanded="true" />
-            <element signature="e#2985#2986#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/platform/location/AndroidLocationManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="55" column="39" lean-forward="false" selection-start-line="55" selection-start-column="39" selection-end-line="55" selection-end-column="39" />
+        <state relative-caret-position="-646">
+          <caret line="21" column="12" lean-forward="false" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/auth/AuthArguments.java">
+    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/NSRJobService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="105" column="24" lean-forward="false" selection-start-line="105" selection-start-column="24" selection-end-line="105" selection-end-column="24" />
-          <folding>
-            <element signature="e#2323#2324#0" expanded="true" />
-            <element signature="e#2377#2378#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="120">
+          <caret line="11" column="12" lean-forward="false" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/auth/AuthManager.java">
+    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/tracer/TracerManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="58" column="57" lean-forward="false" selection-start-line="58" selection-start-column="57" selection-end-line="58" selection-end-column="57" />
-          <folding>
-            <element signature="e#1993#3587#0" expanded="true" />
-            <element signature="e#3586#3587#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="307">
+          <caret line="46" column="2" lean-forward="false" selection-start-line="46" selection-start-column="2" selection-end-line="46" selection-end-column="2" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/NSR.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="540" column="24" lean-forward="true" selection-start-line="540" selection-start-column="24" selection-end-line="540" selection-end-column="24" />
+        <state relative-caret-position="169">
+          <caret line="333" column="0" lean-forward="false" selection-start-line="333" selection-start-column="0" selection-end-line="333" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#10783#10791#0" expanded="true" />
+            <element signature="e#21289#21290#0" expanded="true" />
+            <element signature="e#21356#21357#0" expanded="true" />
+            <element signature="e#21414#21415#0" expanded="true" />
+            <element signature="e#21477#21478#0" expanded="true" />
+            <element signature="e#21519#21520#0" expanded="true" />
+            <element signature="e#21590#21591#0" expanded="true" />
+            <element signature="e#21754#21755#0" expanded="true" />
+            <element signature="e#21821#21822#0" expanded="true" />
+            <element signature="e#21879#21880#0" expanded="true" />
+            <element signature="e#21942#21943#0" expanded="true" />
+            <element signature="e#22629#22630#0" expanded="true" />
+            <element signature="e#22698#22699#0" expanded="true" />
+            <element signature="e#22756#22757#0" expanded="true" />
+            <element signature="e#22823#22824#0" expanded="true" />
+            <element signature="e#22880#22881#0" expanded="true" />
+            <element signature="e#22921#22922#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/NSRActivityIntent.java">
+    <entry file="file://$PROJECT_DIR$/nsr/src/main/java/eu/neosurance/sdk/platform/persistence/SharedPreferencesManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="29" column="31" lean-forward="true" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
-          <folding>
-            <element signature="e#380#381#0" expanded="true" />
-            <element signature="e#413#414#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="136">
+          <caret line="23" column="28" lean-forward="false" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>

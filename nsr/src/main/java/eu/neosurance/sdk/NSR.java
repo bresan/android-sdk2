@@ -39,12 +39,15 @@ import java.util.TimeZone;
 import eu.neosurance.sdk.auth.AuthArguments;
 import eu.neosurance.sdk.auth.AuthListener;
 import eu.neosurance.sdk.auth.AuthManager;
+import eu.neosurance.sdk.platform.persistence.PersistenceFactory;
+import eu.neosurance.sdk.platform.persistence.PersistenceManager;
 import eu.neosurance.sdk.tracer.TracerFactory;
 import eu.neosurance.sdk.tracer.TracerListener;
 import eu.neosurance.sdk.tracer.activity.ActivityTracer;
 import eu.neosurance.sdk.tracer.connection.ConnectionTracer;
 import eu.neosurance.sdk.tracer.location.LocationTracer;
 import eu.neosurance.sdk.tracer.power.PowerTracer;
+import eu.neosurance.sdk.utils.DeviceUtils;
 
 public class NSR implements TracerListener, AuthListener {
 
@@ -84,8 +87,18 @@ public class NSR implements TracerListener, AuthListener {
 
     // Manager objects
     private AuthManager authManager;
+    private PersistenceManager persistenceManager;
+
+
+    private NSR(Context context) {
+        this.context = context;
+
+        initTracers();
+        initManagers();
+    }
 
     private void initManagers() {
+        persistenceManager = new PersistenceFactory(context).makePersistenceManager();
     }
 
     private void initTracers() {
@@ -96,20 +109,13 @@ public class NSR implements TracerListener, AuthListener {
         connectionTracer = tracerFactory.makeConnectionTracer();
     }
 
-    private NSR(Context context) {
-        this.context = context;
-
-        initTracers();
-        initManagers();
-    }
-
     public static NSR getInstance(Context ctx) {
         if (instance == null) {
             Log.d(TAG, "making instance...");
             instance = new NSR(ctx);
             if (!isInvalidAndroidVersion) {
                 try {
-                    String s = instance.getData("securityDelegateClass");
+                    String s = instance.getPersistenceManager().retrieveData("securityDelegateClass");
                     if (s != null) {
                         Log.d(TAG, "making securityDelegate... " + s);
                         instance.setSecurityDelegate((NSRSecurityDelegate) Class.forName(s).newInstance());
@@ -118,7 +124,7 @@ public class NSR implements TracerListener, AuthListener {
                         instance.setSecurityDelegate(new NSRDefaultSecurity());
                     }
 
-                    s = instance.getData("workflowDelegateClass");
+                    s = instance.getPersistenceManager().retrieveData("workflowDelegateClass");
                     if (s != null) {
                         Log.d(TAG, "making workflowDelegate... " + s);
                         instance.setWorkflowDelegate((NSRWorkflowDelegate) Class.forName(s).newInstance());
@@ -264,7 +270,7 @@ public class NSR implements TracerListener, AuthListener {
         if (isInvalidAndroidVersion) {
             return;
         }
-        setData("securityDelegateClass", securityDelegate.getClass().getName());
+        getPersistenceManager().storeData("securityDelegateClass", securityDelegate.getClass().getName());
         this.securityDelegate = securityDelegate;
 
         authManager = new AuthManager(context, securityDelegate, this);
@@ -278,7 +284,7 @@ public class NSR implements TracerListener, AuthListener {
         if (isInvalidAndroidVersion) {
             return;
         }
-        setData("workflowDelegateClass", workflowDelegate.getClass().getName());
+        getPersistenceManager().storeData("workflowDelegateClass", workflowDelegate.getClass().getName());
         this.workflowDelegate = workflowDelegate;
     }
 
@@ -301,8 +307,8 @@ public class NSR implements TracerListener, AuthListener {
             }
             Log.d(TAG, "setup: " + settings);
             setSettings(settings);
-            if (getData("permission_requested") == null && settings.has("ask_permission") && settings.getInt("ask_permission") == 1) {
-                setData("permission_requested", "*");
+            if (getPersistenceManager().retrieveData("permission_requested") == null && settings.has("ask_permission") && settings.getInt("ask_permission") == 1) {
+                getPersistenceManager().storeData("permission_requested", "*");
                 List<String> permissionsList = new ArrayList<String>();
                 if (ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                     permissionsList.add(Manifest.permission.ACCESS_FINE_LOCATION);
@@ -431,7 +437,7 @@ public class NSR implements TracerListener, AuthListener {
                     eventPayLoad.put("payload", payload);
 
                     JSONObject devicePayLoad = new JSONObject();
-                    devicePayLoad.put("uid", getDeviceUid());
+                    devicePayLoad.put("uid", DeviceUtils.getDeviceUid(context));
                     String pushToken = getPushToken();
                     if (pushToken != null) {
                         devicePayLoad.put("push_token", pushToken);
@@ -534,7 +540,7 @@ public class NSR implements TracerListener, AuthListener {
 
     protected NSRUser getUser() {
         try {
-            JSONObject user = getJSONData("user");
+            JSONObject user = getPersistenceManager().retrieveJson("user");
             return user != null ? new NSRUser(user) : null;
         } catch (Exception e) {
             Log.e(TAG, "getUser", e);
@@ -543,33 +549,33 @@ public class NSR implements TracerListener, AuthListener {
     }
 
     protected void setUser(NSRUser user) {
-        setJSONData("user", user == null ? null : user.toJsonObject(true));
+        getPersistenceManager().storeJson("user", user == null ? null : user.toJsonObject(true));
     }
 
     protected JSONObject getConf() {
-        return getJSONData("conf");
+        return getPersistenceManager().retrieveJson("conf");
     }
 
     @Override
     public void setConf(JSONObject conf) {
-        setJSONData("conf", conf);
+        getPersistenceManager().storeJson("conf", conf);
     }
 
     protected JSONObject getSettings() {
-        return getJSONData("settings");
+        return getPersistenceManager().retrieveJson("settings");
     }
 
     protected void setSettings(JSONObject settings) {
-        setJSONData("settings", settings);
+        getPersistenceManager().storeJson("settings", settings);
     }
 
     protected JSONObject getAuth() {
-        return getJSONData("auth");
+        return getPersistenceManager().retrieveJson("auth");
     }
 
     @Override
     public void setAuth(JSONObject auth) {
-        setJSONData("auth", auth);
+        getPersistenceManager().storeJson("auth", auth);
     }
 
     protected String getToken() {
@@ -600,79 +606,16 @@ public class NSR implements TracerListener, AuthListener {
     }
 
     protected String getAppURL() {
-        return getData("appURL");
+        return getPersistenceManager().retrieveData("appURL");
     }
 
     @Override
     public void setAppURL(String appURL) {
-        setData("appURL", appURL);
+        getPersistenceManager().storeData("appURL", appURL);
     }
 
-    protected String getData(String key) {
-        if (getSharedPreferences().contains(key)) {
-            return getSharedPreferences().getString(key, "");
-        } else {
-            return null;
-        }
-    }
-
-    protected void setData(String key, String value) {
-        SharedPreferences.Editor editor = getSharedPreferences().edit();
-        if (value != null) {
-            editor.putString(key, value);
-        } else {
-            editor.remove(key);
-        }
-        editor.commit();
-    }
-
-    protected JSONObject getJSONData(String key) {
-        try {
-            if (getSharedPreferences().contains(key))
-                return new JSONObject(getSharedPreferences().getString(key, "{}"));
-            else
-                return null;
-        } catch (JSONException e) {
-            return null;
-        }
-    }
-
-    protected void setJSONData(String key, JSONObject value) {
-        SharedPreferences.Editor editor = getSharedPreferences().edit();
-        if (value != null) {
-            editor.putString(key, value.toString());
-        } else {
-            editor.remove(key);
-        }
-        editor.commit();
-    }
-
-    protected SharedPreferences getSharedPreferences() {
-        return context.getSharedPreferences(PREFS_NAME, Application.MODE_PRIVATE);
-    }
-
-    protected static Date jsonStringToDate(String s) {
-        try {
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
-            sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
-            return sdf.parse(s);
-        } catch (Exception e) {
-            return null;
-        }
-    }
-
-    protected static String dateToJsonString(Date date) {
-        try {
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
-            sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
-            return sdf.format(date);
-        } catch (Exception e) {
-            return null;
-        }
-    }
-
-    protected String getDeviceUid() {
-        return Settings.Secure.getString(context.getContentResolver(), Settings.Secure.ANDROID_ID);
+    public PersistenceManager getPersistenceManager() {
+        return persistenceManager;
     }
 
     public void loginExecuted(String url) {
