@@ -1,33 +1,46 @@
-package eu.neosurance.sdk.auth;
+package eu.neosurance.sdk.processors.auth;
 
 import android.content.Context;
 import android.util.Log;
 
 import org.json.JSONObject;
 
+import eu.neosurance.sdk.Constants;
 import eu.neosurance.sdk.NSRAuth;
 import eu.neosurance.sdk.NSRSecurityDelegate;
 import eu.neosurance.sdk.NSRSecurityResponse;
 import eu.neosurance.sdk.NSRUser;
+import eu.neosurance.sdk.data.DataManager;
+import eu.neosurance.sdk.job.JobManager;
+import eu.neosurance.sdk.utils.EventWebViewManager;
 
-public class AuthManager {
+public class AuthProcessor {
 
-    private static final String TAG = AuthManager.class.getCanonicalName();
+    private static final String TAG = AuthProcessor.class.getCanonicalName();
     private final Context context;
-    private final NSRSecurityDelegate securityDelegate;
 
-    private final AuthListener authListener;
+    private final DataManager dataManager;
+    private final EventWebViewManager eventWebViewManager;
+    private eu.neosurance.sdk.processors.auth.AuthListener authListener;
 
+    private NSRSecurityDelegate securityDelegate;
 
-    public AuthManager(Context context,
-                       NSRSecurityDelegate securityDelegate,
-                       AuthListener authListener) {
+    public AuthProcessor(Context context,
+                         DataManager dataManager,
+                         EventWebViewManager eventWebViewManager,
+                         eu.neosurance.sdk.processors.auth.AuthListener authListener) {
         this.context = context;
-        this.securityDelegate = securityDelegate;
+        this.dataManager = dataManager;
+        this.eventWebViewManager = eventWebViewManager;
         this.authListener = authListener;
     }
 
-    public void authorize(final NSRAuth delegate, final AuthArguments arguments) throws Exception {
+    public void setSecurityDelegate(NSRSecurityDelegate securityDelegate) {
+        this.securityDelegate = securityDelegate;
+    }
+
+    public void authorize(final NSRAuth delegate) throws Exception {
+        final AuthArguments arguments = makeAuthArguments();
         Log.d(TAG, "authorize");
         JSONObject auth = arguments.getAuth();
         if (auth != null && (auth.getLong("expire") - System.currentTimeMillis()) > 0) {
@@ -53,23 +66,24 @@ public class AuthManager {
                             if (error == null) {
                                 JSONObject auth = response.getJSONObject("auth");
                                 Log.d(TAG, "authorize auth: " + auth);
-                                authListener.setAuth(auth);
+                                dataManager.getAuthRepository().setAuth(auth);
 
                                 JSONObject oldConf = arguments.getConf();
                                 JSONObject conf = response.getJSONObject("conf");
                                 Log.d(TAG, "authorize conf: " + conf);
-                                authListener.setConf(conf);
+                                dataManager.getConfigurationRepository().setConf(conf);
 
                                 String appUrl = response.getString("app_url");
                                 Log.d(TAG, "authorize appUrl: " + appUrl);
-                                authListener.setAppURL(appUrl);
+                                dataManager.getAppUrlRepository().setAppURL(appUrl);
 
                                 if (authListener.needsInitJob(conf, oldConf)) {
                                     Log.d(TAG, "authorize needsInitJob");
                                     authListener.initJob();
                                 }
+
                                 if (conf.has("local_tracking") && conf.getBoolean("local_tracking")) {
-                                    authListener.synchEventWebView();
+                                    eventWebViewManager.synchEventWebView();
                                 }
                                 delegate.authorized(true);
                             } else {
@@ -84,4 +98,22 @@ public class AuthManager {
             }
         }
     }
+
+    public AuthArguments makeAuthArguments() {
+        AuthArguments authArguments = new AuthArguments.Builder()
+                .conf(dataManager.getConfigurationRepository().getConf())
+                .auth(dataManager.getAuthRepository().getAuth())
+                .settings(dataManager.getSettingsRepository().getSettings())
+                .user(dataManager.getUserRepository().getUser())
+                .version(Constants.getVersion())
+                .os(Constants.getOs())
+                .build();
+
+        return authArguments;
+    }
+
+    public interface AuthListener {
+
+    }
+
 }

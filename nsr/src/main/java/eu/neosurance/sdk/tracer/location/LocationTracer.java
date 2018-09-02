@@ -1,26 +1,26 @@
 package eu.neosurance.sdk.tracer.location;
 
-import android.Manifest;
-import android.content.pm.PackageManager;
 import android.location.Location;
-import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 
 import org.json.JSONException;
-import org.json.JSONObject;
 
+import eu.neosurance.sdk.data.configuration.ConfigurationRepository;
 import eu.neosurance.sdk.platform.location.LocationManager;
 import eu.neosurance.sdk.tracer.Tracer;
 
 public class LocationTracer implements Tracer {
 
     private static final String TAG = LocationTracer.class.getCanonicalName();
-    private LocationManager locationManager;
+    private final LocationManager locationManager;
+    private final ConfigurationRepository configurationRepository;
 
     private boolean stillLocation;
 
-    public LocationTracer(LocationManager locationManager) {
+    public LocationTracer(LocationManager locationManager,
+                          ConfigurationRepository configurationRepository) {
         this.locationManager = locationManager;
+        this.configurationRepository = configurationRepository;
     }
 
     public LocationManager getLocationManager() {
@@ -28,11 +28,12 @@ public class LocationTracer implements Tracer {
     }
 
     @Override
-    public void trace(JSONObject conf) {
+    public void trace() {
         Log.d(TAG, "traceLocation");
         try {
             if (locationManager.hasLocationPermission()) {
-                if (conf != null && conf.getJSONObject("position").getInt("enabled") == 1) {
+                if (configurationRepository.getConf() != null &&
+                        configurationRepository.getConf().getJSONObject("position").getInt("enabled") == 1) {
                     locationManager.initLocation();
                     Log.d(TAG, "requestLocationUpdates");
                     locationManager.stopTraceLocation();

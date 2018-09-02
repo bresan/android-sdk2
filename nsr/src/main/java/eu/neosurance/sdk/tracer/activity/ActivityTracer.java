@@ -1,11 +1,10 @@
 package eu.neosurance.sdk.tracer.activity;
 
-import android.app.Activity;
 import android.util.Log;
 
 import org.json.JSONException;
-import org.json.JSONObject;
 
+import eu.neosurance.sdk.data.configuration.ConfigurationRepository;
 import eu.neosurance.sdk.platform.activity.ActivityManager;
 import eu.neosurance.sdk.tracer.Tracer;
 
@@ -14,16 +13,19 @@ public class ActivityTracer implements Tracer {
     private static final String TAG = ActivityTracer.class.getCanonicalName();
 
     private final ActivityManager activityManager;
+    private final ConfigurationRepository configurationRepository;
 
-    public ActivityTracer(ActivityManager activityManager) {
+    public ActivityTracer(ActivityManager activityManager, ConfigurationRepository configurationRepository) {
         this.activityManager = activityManager;
+        this.configurationRepository = configurationRepository;
     }
 
     @Override
-    public void trace(JSONObject conf) {
+    public void trace() {
         Log.d(TAG, "traceActivity");
         try {
-            if (conf != null && conf.getJSONObject("activity").getInt("enabled") == 1) {
+            if (configurationRepository.getConf() != null &&
+                    configurationRepository.getConf().getJSONObject("activity").getInt("enabled") == 1) {
                 activityManager.initActivity();
                 Log.d(TAG, "requestActivityUpdates");
                 activityManager.stopTraceActivity();

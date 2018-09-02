@@ -1,4 +1,4 @@
-package eu.neosurance.sdk.auth;
+package eu.neosurance.sdk.processors.auth;
 
 import org.json.JSONObject;
 

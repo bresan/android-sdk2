@@ -19,15 +19,15 @@ import com.loopj.android.http.FileAsyncHttpResponseHandler;
 import java.io.File;
 
 import cz.msebera.android.httpclient.Header;
+import eu.neosurance.sdk.utils.PrecheckUtils;
 
 public class NSRNotification {
 	private static final String CHANNEL_ID = "NSR_CH_ID";
 	private static boolean channelcreated = false;
 
 	public static void sendNotification(final Context ctx, final String title, final String body, final String imageUrl, final PendingIntent pendingIntent) {
-		if (NSR.isInvalidAndroidVersion) {
-			return;
-		}
+		PrecheckUtils.guaranteeMinimalAndroidVersion();
+
 		if (!channelcreated && Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
 			channelcreated = true;
 			NotificationChannel channel = new NotificationChannel(CHANNEL_ID, NSR.TAG, NotificationManager.IMPORTANCE_HIGH);
@@ -64,7 +64,7 @@ public class NSRNotification {
 		notification = new NotificationCompat.Builder(ctx, CHANNEL_ID);
 		notification.setSound(Uri.parse("android.resource://" + ctx.getPackageName() + "/" + R.raw.push));
 		try {
-			notification.setSmallIcon(NSR.getInstance(ctx).getSettings().getInt("push_icon"));
+			notification.setSmallIcon(NSR.getInstance(ctx).getSettingsRepository().getSettings().getInt("push_icon"));
 		} catch (Exception e) {
 			notification.setSmallIcon(R.drawable.nsr_logo);
 		}

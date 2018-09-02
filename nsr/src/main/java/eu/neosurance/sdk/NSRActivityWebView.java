@@ -1,6 +1,7 @@
 package eu.neosurance.sdk;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -49,7 +50,7 @@ public class NSRActivityWebView extends AppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		nsr = NSR.getInstance(getApplicationContext());
-		nsr.registerWebView(this);
+		nsr.getActivityWebViewManager().registerWebView(this);
 		try {
 			String url = getIntent().getExtras().getString("url");
 			webView = new WebView(this);
@@ -79,7 +80,7 @@ public class NSRActivityWebView extends AppCompatActivity {
 		}
 	}
 
-	protected synchronized void navigate(final String url) {
+	public synchronized void navigate(final String url) {
 		new Handler(Looper.getMainLooper()).post(new Runnable() {
 			public void run() {
 				try {
@@ -113,23 +114,23 @@ public class NSRActivityWebView extends AppCompatActivity {
 				Log.i(NSR.TAG, body.getString("log"));
 			}
 			if (body.has("event") && body.has("payload")) {
-				nsr.sendEvent(body.getString("event"), body.getJSONObject("payload"));
+				nsr.getProcessorManager().getEventProcessor().sendEvent(body.getString("event"), body.getJSONObject("payload"));
 			}
 			if (body.has("crunchEvent") && body.has("payload")) {
-				nsr.crunchEvent(body.getString("event"), body.getJSONObject("payload"));
+				nsr.getProcessorManager().getEventProcessor().crunchEvent(body.getString("event"), body.getJSONObject("payload"));
 			}
 			if (body.has("action")) {
-				nsr.sendAction(body.getString("action"), body.getString("code"), body.getString("details"));
+				nsr.getProcessorManager().getActionProcessor().sendAction(body.getString("action"), body.getString("code"), body.getString("details"));
 			}
 			if (body.has("what")) {
 				if ("init".equals(body.getString("what")) && body.has("callBack")) {
-					nsr.authorize(new NSRAuth() {
+					nsr.getProcessorManager().getAuthProcessor().authorize(new NSRAuth() {
 						public void authorized(boolean authorized) throws Exception {
-							JSONObject settings = nsr.getSettings();
+							JSONObject settings = nsr.getSettingsRepository().getSettings();
 							JSONObject message = new JSONObject();
 							message.put("api", settings.getString("base_url"));
-							message.put("token", nsr.getToken());
-							message.put("lang", nsr.getLang());
+							message.put("token", nsr.getAuthRepository().getToken());
+							message.put("lang", nsr.getSettingsRepository().getLang());
 							message.put("deviceUid", DeviceUtils.getDeviceUid(NSRActivityWebView.this));
 							eval(body.getString("callBack") + "(" + message.toString() + ")");
 						}
@@ -145,7 +146,7 @@ public class NSRActivityWebView extends AppCompatActivity {
 					getLocation(body.getString("callBack"));
 				}
 				if ("user".equals(body.getString("what")) && body.has("callBack")) {
-					eval(body.getString("callBack") + "(" + nsr.getUser().toJsonObject(true).toString() + ")");
+					eval(body.getString("callBack") + "(" + nsr.getDataManager().getUserRepository().getUser().toJsonObject(true).toString() + ")");
 				}
 				if ("showApp".equals(body.getString("what"))) {
 					if (body.has("params")) {
@@ -156,13 +157,13 @@ public class NSRActivityWebView extends AppCompatActivity {
 				}
 				if ("showUrl".equals(body.getString("what")) && body.has("url")) {
 					if (body.has("params")) {
-						nsr.showUrl(body.getString("url"), body.getJSONObject("params"));
+						nsr.getActivityWebViewManager().showUrl(body.getString("url"), body.getJSONObject("params"));
 					} else {
-						nsr.showUrl(body.getString("url"));
+						nsr.getActivityWebViewManager().showUrl(body.getString("url"));
 					}
 				}
 				if ("callApi".equals(body.getString("what")) && body.has("callBack")) {
-					nsr.authorize(new NSRAuth() {
+					nsr.getProcessorManager().getAuthProcessor().authorize(new NSRAuth() {
 						public void authorized(boolean authorized) throws Exception {
 							if (!authorized) {
 								JSONObject result = new JSONObject();
@@ -172,8 +173,8 @@ public class NSRActivityWebView extends AppCompatActivity {
 								return;
 							}
 							JSONObject headers = new JSONObject();
-							headers.put("ns_token", nsr.getToken());
-							headers.put("ns_lang", nsr.getLang());
+							headers.put("ns_token", nsr.getAuthRepository().getToken());
+							headers.put("ns_lang", nsr.getSettingsRepository().getLang());
 							nsr.getSecurityDelegate().secureRequest(getApplicationContext(), body.getString("endpoint"), body.has("payload") ? body.getJSONObject("payload") : null, headers, new NSRSecurityResponse() {
 								public void completionHandler(JSONObject json, String error) throws Exception {
 									if (error == null) {
@@ -235,7 +236,7 @@ public class NSRActivityWebView extends AppCompatActivity {
 			Intent mIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 			if (mIntent.resolveActivity(this.getPackageManager()) != null) {
 				mIntent.putExtra(MediaStore.EXTRA_OUTPUT, FileProvider.getUriForFile(this, getPackageName() + ".provider", imageFile()));
-				this.startActivityForResult(mIntent, NSR.REQUEST_IMAGE_CAPTURE);
+				this.startActivityForResult(mIntent, Constants.REQUEST_IMAGE_CAPTURE);
 			}
 		} else {
 			List<String> permissionsList = new ArrayList<String>();
@@ -245,12 +246,12 @@ public class NSRActivityWebView extends AppCompatActivity {
 			if (!storage) {
 				permissionsList.add(Manifest.permission.WRITE_EXTERNAL_STORAGE);
 			}
-			ActivityCompat.requestPermissions(this, permissionsList.toArray(new String[permissionsList.size()]), NSR.PERMISSIONS_MULTIPLE_IMAGECAPTURE);
+			ActivityCompat.requestPermissions(this, permissionsList.toArray(new String[permissionsList.size()]), Constants.PERMISSIONS_MULTIPLE_IMAGECAPTURE);
 		}
 	}
 
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		if (requestCode == NSR.REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
+		if (requestCode == Constants.REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
 			try (ByteArrayOutputStream baos = new ByteArrayOutputStream()) {
 				int orientation = new ExifInterface(imageFile().getAbsolutePath()).getAttributeInt(ExifInterface.TAG_ORIENTATION, 0);
 				int degree = 0;
@@ -281,6 +282,7 @@ public class NSRActivityWebView extends AppCompatActivity {
 		}
 	}
 
+	@SuppressLint("MissingPermission")
 	private void getLocation(final String callBack) {
 		boolean coarse = (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED);
 		boolean fine = ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED;
@@ -315,7 +317,7 @@ public class NSRActivityWebView extends AppCompatActivity {
 			if (!coarse) {
 				permissionsList.add(Manifest.permission.ACCESS_COARSE_LOCATION);
 			}
-			ActivityCompat.requestPermissions(this, permissionsList.toArray(new String[permissionsList.size()]), NSR.PERMISSIONS_MULTIPLE_ACCESSLOCATION);
+			ActivityCompat.requestPermissions(this, permissionsList.toArray(new String[permissionsList.size()]), Constants.PERMISSIONS_MULTIPLE_ACCESSLOCATION);
 		}
 	}
 
@@ -341,7 +343,7 @@ public class NSRActivityWebView extends AppCompatActivity {
 	}
 
 	public synchronized void finish() {
-		nsr.clearWebView();
+		nsr.getActivityWebViewManager().clearWebView();
 		new Handler(Looper.getMainLooper()).post(new Runnable() {
 			public void run() {
 				try {

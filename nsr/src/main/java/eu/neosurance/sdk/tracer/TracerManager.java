@@ -4,17 +4,18 @@ import android.content.Context;
 
 import org.json.JSONObject;
 
-import eu.neosurance.sdk.configuration.ConfigurationManager;
+import eu.neosurance.sdk.data.configuration.ConfigurationRepository;
+import eu.neosurance.sdk.processors.ProcessorManager;
 import eu.neosurance.sdk.tracer.activity.ActivityTracer;
 import eu.neosurance.sdk.tracer.connection.ConnectionTracer;
 import eu.neosurance.sdk.tracer.location.LocationTracer;
 import eu.neosurance.sdk.tracer.power.PowerTracer;
 
-public class TracerManager {
-//
-//    private final Context context;
-//    private final TracerListener tracerListener;
-//    private final ConfigurationManager configurationManager;
+public class TracerManager implements TracerListener {
+
+    private final Context context;
+    private final ConfigurationRepository configurationRepository;
+    private ProcessorManager processorManager;
 
     private TracerFactory tracerFactory;
     private PowerTracer powerTracer;
@@ -22,49 +23,53 @@ public class TracerManager {
     private ActivityTracer activityTracer;
     private ConnectionTracer connectionTracer;
 
-    private JSONObject conf;
-//
-//    public TracerManager(Context context, TracerListener listener, ConfigurationManager configurationManager) {
-//        this.context = context;
-//        this.tracerListener = listener;
-//        this.configurationManager = configurationManager;
-//
-//        initTracers();
-//    }
-//
-//    private void initTracers() {
-//        tracerFactory = new TracerFactory(context, tracerListener);
-//        powerTracer = tracerFactory.makePowerTracer();
-//        locationTracer = tracerFactory.makeLocationTracer();
-//        activityTracer = tracerFactory.makeActivityTracer();
-//        connectionTracer = tracerFactory.makeConnectionTracer();
-//    }
-//
-//    public PowerTracer getPowerTracer() {
-//        updateConfForTracers();
-//        return powerTracer;
-//    }
-//
-//    public LocationTracer getLocationTracer() {
-//        updateConfForTracers();
-//        return locationTracer;
-//    }
-//
-//    public ActivityTracer getActivityTracer() {
-//        updateConfForTracers();
-//        return activityTracer;
-//    }
-//
-//    public ConnectionTracer getConnectionTracer() {
-//        updateConfForTracers();
-//        return connectionTracer;
-//    }
-//
-//    private void updateConfForTracers() {
-//        this.conf = configurationManager.getConf();
-//        powerTracer.setConf(conf);
-//        locationTracer.setConf(conf);
-//        activityTracer.setConf(conf);
-//        connectionTracer.setConf(conf);
-//    }
+    public TracerManager(Context context,
+                         ConfigurationRepository configurationRepository,
+                         ProcessorManager processorManager) {
+        this.context = context;
+        this.configurationRepository = configurationRepository;
+        this.processorManager = processorManager;
+
+        setupTracers();
+    }
+
+    private void setupTracers() {
+        tracerFactory = new TracerFactory(context, this, configurationRepository);
+        powerTracer = tracerFactory.makePowerTracer();
+        locationTracer = tracerFactory.makeLocationTracer();
+        activityTracer = tracerFactory.makeActivityTracer();
+        connectionTracer = tracerFactory.makeConnectionTracer();
+    }
+
+    public void initAllTracers() {
+        getLocationTracer().trace();
+        getActivityTracer().trace();
+        getPowerTracer().trace();
+        getConnectionTracer().trace();
+    }
+
+    public PowerTracer getPowerTracer() {
+        return powerTracer;
+    }
+
+    public LocationTracer getLocationTracer() {
+        return locationTracer;
+    }
+
+    public ActivityTracer getActivityTracer() {
+        return activityTracer;
+    }
+
+    public ConnectionTracer getConnectionTracer() {
+        return connectionTracer;
+    }
+
+    @Override
+    public void onTraceDone(String traceType, JSONObject payload) {
+        try {
+            processorManager.getEventProcessor().crunchEvent(traceType, payload);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

@@ -1,14 +1,14 @@
-package eu.neosurance.sdk.configuration;
+package eu.neosurance.sdk.data.configuration;
 
 import org.json.JSONObject;
 
 import eu.neosurance.sdk.platform.persistence.PersistenceManager;
 
-public class ConfigurationManager {
+public class ConfigurationRepository {
 
     private final PersistenceManager persistenceManager;
 
-    public ConfigurationManager(PersistenceManager persistenceManager) {
+    public ConfigurationRepository(PersistenceManager persistenceManager) {
         this.persistenceManager = persistenceManager;
     }
 

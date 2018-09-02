@@ -4,6 +4,7 @@ import android.util.Log;
 
 import org.json.JSONObject;
 
+import eu.neosurance.sdk.data.configuration.ConfigurationRepository;
 import eu.neosurance.sdk.platform.power.PowerManager;
 import eu.neosurance.sdk.tracer.Tracer;
 import eu.neosurance.sdk.tracer.TracerListener;
@@ -14,20 +15,23 @@ public class PowerTracer implements Tracer {
 
     private final TracerListener listener;
     private final PowerManager powerManager;
+    private final ConfigurationRepository configurationRepository;
 
     private String lastPower = null;
     private int lastPowerLevel = 0;
 
-    public PowerTracer(TracerListener listener, PowerManager powerManager) {
+    public PowerTracer(TracerListener listener, PowerManager powerManager,
+                       ConfigurationRepository configurationRepository) {
         this.listener = listener;
         this.powerManager = powerManager;
+        this.configurationRepository = configurationRepository;
     }
 
     @Override
-    public void trace(JSONObject conf) {
+    public void trace() {
         Log.d(TAG, "tracePower");
         try {
-            if (conf.getJSONObject("power").getInt("enabled") == 1) {
+            if (configurationRepository.getConf().getJSONObject("power").getInt("enabled") == 1) {
 
                 int powerLevel = powerManager.getBatteryLevel();
                 String power = powerManager.getStatus();

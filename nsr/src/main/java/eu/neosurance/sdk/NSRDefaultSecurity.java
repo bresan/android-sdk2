@@ -23,7 +23,7 @@ public class NSRDefaultSecurity implements NSRSecurityDelegate {
 			public void run() {
 				try {
 					final AsyncHttpClient client = new AsyncHttpClient();
-					final String url = NSR.getInstance(ctx).getSettings().getString("base_url") + endpoint;
+					final String url = NSR.getInstance(ctx).getSettingsRepository().getSettings().getString("base_url") + endpoint;
 					Log.d(NSR.TAG, "NSRDefaultSecurity: " + url);
 					if (headers != null) {
 						Iterator<String> keys = headers.keys();

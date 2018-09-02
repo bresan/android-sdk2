@@ -2,7 +2,7 @@ package eu.neosurance.sdk.tracer;
 
 import android.content.Context;
 
-import eu.neosurance.sdk.platform.connection.ConnectionManager;
+import eu.neosurance.sdk.data.configuration.ConfigurationRepository;
 import eu.neosurance.sdk.tracer.activity.ActivityTracer;
 import eu.neosurance.sdk.tracer.activity.ActivityTracerFactory;
 import eu.neosurance.sdk.tracer.connection.ConnectionTracer;
@@ -16,26 +16,30 @@ public class TracerFactory {
 
     public final Context context;
     private final TracerListener tracerListener;
+    private final ConfigurationRepository configurationRepository;
+
 
     public TracerFactory(Context context,
-                         TracerListener tracerListener) {
+                         TracerListener tracerListener,
+                         ConfigurationRepository configurationRepository) {
         this.context = context;
         this.tracerListener = tracerListener;
+        this.configurationRepository = configurationRepository;
     }
 
     public LocationTracer makeLocationTracer() {
-        return new LocationTracerFactory(context).makeLocationTracer();
+        return new LocationTracerFactory(context, configurationRepository).makeLocationTracer();
     }
 
     public PowerTracer makePowerTracer() {
-        return new PowerTracerFactory(context, tracerListener).makePowerTracer();
+        return new PowerTracerFactory(context, tracerListener, configurationRepository).makePowerTracer();
     }
 
     public ActivityTracer makeActivityTracer() {
-        return new ActivityTracerFactory(context).makeActivityTracer();
+        return new ActivityTracerFactory(context, configurationRepository).makeActivityTracer();
     }
 
     public ConnectionTracer makeConnectionTracer() {
-        return new ConnectionTracerFactory(context, tracerListener).makeConnectionTracer();
+        return new ConnectionTracerFactory(context, tracerListener, configurationRepository).makeConnectionTracer();
     }
 }

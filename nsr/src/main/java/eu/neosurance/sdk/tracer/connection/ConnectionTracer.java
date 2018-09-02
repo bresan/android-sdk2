@@ -1,13 +1,10 @@
 package eu.neosurance.sdk.tracer.connection;
 
-import android.content.Context;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.util.Log;
 
 import org.json.JSONObject;
 
-import eu.neosurance.sdk.NSR;
+import eu.neosurance.sdk.data.configuration.ConfigurationRepository;
 import eu.neosurance.sdk.platform.connection.ConnectionManager;
 import eu.neosurance.sdk.tracer.Tracer;
 import eu.neosurance.sdk.tracer.TracerListener;
@@ -18,18 +15,22 @@ public class ConnectionTracer implements Tracer {
     private static final String TRACE_TYPE = "connection";
 
     private final TracerListener tracerListener;
-    private ConnectionManager connectionManager;
+    private final ConfigurationRepository configurationRepository;
+    private final ConnectionManager connectionManager;
 
-    public ConnectionTracer(ConnectionManager connectionManager, TracerListener tracerListener) {
+    public ConnectionTracer(ConnectionManager connectionManager,
+                            TracerListener tracerListener,
+                            ConfigurationRepository configurationRepository) {
         this.connectionManager = connectionManager;
         this.tracerListener = tracerListener;
+        this.configurationRepository = configurationRepository;
     }
 
     @Override
-    public void trace(JSONObject conf) {
+    public void trace() {
         Log.d(TAG, "traceConnection");
         try {
-            if (conf.getJSONObject("connection").getInt("enabled") == 1) {
+            if (configurationRepository.getConf().getJSONObject("connection").getInt("enabled") == 1) {
                 String connection = connectionManager.getConnectionType();
 
                 if (connection != null && !connection.equals(connectionManager.getLastConnection())) {

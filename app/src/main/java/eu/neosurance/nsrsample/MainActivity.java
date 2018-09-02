@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
 		user.setFirstname("gio");
 		user.setLastname("gio");
 		user.setFiscalCode("ABCDE");
+
 		NSR.getInstance(this).registerUser(user);
 	}
 

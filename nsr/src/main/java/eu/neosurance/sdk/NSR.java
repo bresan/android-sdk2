@@ -1,663 +1,306 @@
 package eu.neosurance.sdk;
 
-import android.Manifest;
-import android.app.Activity;
-import android.app.Application;
-import android.app.PendingIntent;
 import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
-import android.location.Location;
-import android.os.Build;
-import android.provider.Settings;
-import android.support.v4.app.ActivityCompat;
 import android.util.Log;
-import android.webkit.WebView;
 
-import com.firebase.jobdispatcher.Constraint;
-import com.firebase.jobdispatcher.FirebaseJobDispatcher;
-import com.firebase.jobdispatcher.GooglePlayDriver;
-import com.firebase.jobdispatcher.Job;
-import com.firebase.jobdispatcher.Lifetime;
-import com.firebase.jobdispatcher.RetryStrategy;
-import com.firebase.jobdispatcher.Trigger;
-
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.net.URLEncoder;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Locale;
-import java.util.TimeZone;
+import eu.neosurance.sdk.data.DataManager;
+import eu.neosurance.sdk.data.auth.AuthRepository;
+import eu.neosurance.sdk.data.settings.SettingsRepository;
+import eu.neosurance.sdk.interactors.app.ShowApp;
+import eu.neosurance.sdk.interactors.event.SendEvent;
+import eu.neosurance.sdk.interactors.login.PerformLogin;
+import eu.neosurance.sdk.interactors.payment.PaymentDone;
+import eu.neosurance.sdk.interactors.user.ForgetUser;
+import eu.neosurance.sdk.interactors.user.RegisterUser;
+import eu.neosurance.sdk.job.JobManager;
+import eu.neosurance.sdk.processors.ProcessorManager;
+import eu.neosurance.sdk.processors.auth.AuthListener;
+import eu.neosurance.sdk.tracer.TracerManager;
+import eu.neosurance.sdk.utils.ActivityWebViewManager;
+import eu.neosurance.sdk.utils.SetupUtils;
 
-import eu.neosurance.sdk.auth.AuthArguments;
-import eu.neosurance.sdk.auth.AuthListener;
-import eu.neosurance.sdk.auth.AuthManager;
-import eu.neosurance.sdk.platform.persistence.PersistenceFactory;
-import eu.neosurance.sdk.platform.persistence.PersistenceManager;
-import eu.neosurance.sdk.tracer.TracerFactory;
-import eu.neosurance.sdk.tracer.TracerListener;
-import eu.neosurance.sdk.tracer.activity.ActivityTracer;
-import eu.neosurance.sdk.tracer.connection.ConnectionTracer;
-import eu.neosurance.sdk.tracer.location.LocationTracer;
-import eu.neosurance.sdk.tracer.power.PowerTracer;
-import eu.neosurance.sdk.utils.DeviceUtils;
+import static eu.neosurance.sdk.utils.PrecheckUtils.guaranteeMinimalAndroidVersion;
 
-public class NSR implements TracerListener, AuthListener {
+public class NSR implements AuthListener {
 
-    public static boolean isInvalidAndroidVersion = android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.LOLLIPOP;
-
-    protected String getOs() {
-        return "Android";
-    }
-
-    protected String getVersion() {
-        return "2.0.3";
-    }
-
-    protected static final String PREFS_NAME = "NSRSDK";
     protected static final String TAG = "nsr";
-    protected static final String JOB_TAG = "nsrJob";
-    protected static final int PERMISSIONS_MULTIPLE_ACCESSLOCATION = 0x2043;
-    protected static final int PERMISSIONS_MULTIPLE_IMAGECAPTURE = 0x2049;
-    protected static final int REQUEST_IMAGE_CAPTURE = 0x1702;
 
     private static NSR instance = null;
-    private Context context = null;
-    private NSREventWebView eventWebView = null;
-    private long eventWebViewSynchTime = 0;
+    private Context context;
 
-    private NSRSecurityDelegate securityDelegate = null;
-    private NSRWorkflowDelegate workflowDelegate = null;
-    private NSRActivityWebView activityWebView = null;
+    private DependencyProvider dependencyProvider;
 
+    /*
+      Accessible methods over public API
+     */
 
-    // Tracer related objects
-    private TracerFactory tracerFactory;
-    private PowerTracer powerTracer;
-    private LocationTracer locationTracer;
-    private ActivityTracer activityTracer;
-    private ConnectionTracer connectionTracer;
-
-    // Manager objects
-    private AuthManager authManager;
-    private PersistenceManager persistenceManager;
-
-
-    private NSR(Context context) {
-        this.context = context;
-
-        initTracers();
-        initManagers();
-    }
-
-    private void initManagers() {
-        persistenceManager = new PersistenceFactory(context).makePersistenceManager();
-    }
-
-    private void initTracers() {
-        tracerFactory = new TracerFactory(context, this);
-        powerTracer = tracerFactory.makePowerTracer();
-        locationTracer = tracerFactory.makeLocationTracer();
-        activityTracer = tracerFactory.makeActivityTracer();
-        connectionTracer = tracerFactory.makeConnectionTracer();
-    }
-
-    public static NSR getInstance(Context ctx) {
+    /**
+     * This method is used to get the instance of Neosurance client
+     *
+     * @param context the context to be used
+     * @return the {@link NSR} class instance
+     */
+    public static NSR getInstance(Context context) {
         if (instance == null) {
-            Log.d(TAG, "making instance...");
-            instance = new NSR(ctx);
-            if (!isInvalidAndroidVersion) {
-                try {
-                    String s = instance.getPersistenceManager().retrieveData("securityDelegateClass");
-                    if (s != null) {
-                        Log.d(TAG, "making securityDelegate... " + s);
-                        instance.setSecurityDelegate((NSRSecurityDelegate) Class.forName(s).newInstance());
-                    } else {
-                        Log.d(TAG, "making securityDelegate... NSRDefaultSecurity");
-                        instance.setSecurityDelegate(new NSRDefaultSecurity());
-                    }
-
-                    s = instance.getPersistenceManager().retrieveData("workflowDelegateClass");
-                    if (s != null) {
-                        Log.d(TAG, "making workflowDelegate... " + s);
-                        instance.setWorkflowDelegate((NSRWorkflowDelegate) Class.forName(s).newInstance());
-                    }
-
-                    instance.initJob();
-                } catch (Exception e) {
-                    Log.e(TAG, "getInstance", e);
-                }
-            }
+            instance = new NSR(context);
+            instance = InstanceManager.setupNewInstance(instance);
         } else {
-            instance.context = ctx;
+            instance.context = context;
         }
         return instance;
     }
 
-    @Override
-    public void initJob() {
-        Log.d(TAG, "initJob");
-        try {
-            stopTraceActivity();
-            stopTraceLocation();
-            new FirebaseJobDispatcher(new GooglePlayDriver(context)).cancel(JOB_TAG);
-            JSONObject conf = getConf();
-            if (conf != null) {
-                if (eventWebView == null && conf.has("local_tracking") && conf.getBoolean("local_tracking")) {
-                    Log.d(TAG, "Making NSREventWebView");
-                    eventWebView = new NSREventWebView(context, this);
-                    eventWebViewSynchTime = System.currentTimeMillis() / 1000;
-                }
-
-                int time = conf.getInt("time");
-                FirebaseJobDispatcher jobDispatcher = new FirebaseJobDispatcher(new GooglePlayDriver(context));
-                Job myJob = jobDispatcher.newJobBuilder()
-                        .setService(NSRJobService.class)
-                        .setTag(JOB_TAG)
-                        .setRecurring(true)
-                        .setTrigger(Trigger.executionWindow(time / 2, time))
-                        .setLifetime(Lifetime.FOREVER)
-                        .setReplaceCurrent(true)
-                        .setConstraints(Constraint.ON_ANY_NETWORK)
-                        .setRetryStrategy(RetryStrategy.DEFAULT_LINEAR)
-                        .build();
-                jobDispatcher.mustSchedule(myJob);
-            }
-        } catch (Exception e) {
-            Log.e(TAG, "initJob", e);
-        }
-    }
-
-    @Override
-    public void synchEventWebView() {
-        long t = System.currentTimeMillis() / 1000;
-        if (eventWebView != null && t - eventWebViewSynchTime > (60 * 60 * 8)) {
-            eventWebView.synch();
-            eventWebViewSynchTime = t;
-        }
-    }
-
-    @Override
-    public boolean needsInitJob(JSONObject conf, JSONObject oldConf) throws Exception {
-        return (oldConf == null) ||
-                (conf.getInt("time") != oldConf.getInt("time")) ||
-                (eventWebView == null && conf.has("local_tracking") &&
-                        conf.getBoolean("local_tracking"));
+    /**
+     * This method is used to setup the NSR client receiving. It expects a JSONObject.
+     *
+     * @param settings the JSON object with the settings to be used
+     */
+    public void setup(final JSONObject settings) {
+        SetupUtils.performSetup(context, getDataManager(), settings, Constants.PERMISSIONS_MULTIPLE_ACCESSLOCATION);
     }
 
     /**
-     * Location Related Events
+     * This method is used to perform the login of a given user
+     *
+     * @param user the user to perform the login
      */
-    protected void traceLocation() {
-        locationTracer.trace(getConf());
-    }
-
-    protected void stopTraceLocation() {
-        locationTracer.stopTrace();
-    }
-
-    protected Location getLastLocation() {
-        return locationTracer.getLastLocation();
-    }
-
-    protected void setLastLocation(Location lastLocation) {
-        this.locationTracer.setLastLocation(lastLocation);
-    }
-
-    protected boolean getStillLocation() {
-        return this.locationTracer.getStillLocation();
-    }
-
-    protected void setStillLocation(boolean stillLocation) {
-        this.locationTracer.setStillLocation(stillLocation);
+    public void registerUser(NSRUser user) {
+        guaranteeMinimalAndroidVersion();
+        getForgetUserUseCase().execute(null);
+        getRegisterUserUseCase().execute(user);
     }
 
     /**
-     * Power related events
+     * This method is used to forget the login of the current user
      */
-    protected void tracePower() {
-        powerTracer.trace(getConf());
+    public void forgetUser() {
+        guaranteeMinimalAndroidVersion();
+        getForgetUserUseCase().execute(null);
     }
 
     /**
-     * Activity related events
+     * This method is used to submit a given event with a payload
+     *
+     * @param event   the event to be submitted
+     * @param payload the payload message to be submited with the event
      */
-    protected void traceActivity() {
-        activityTracer.trace(getConf());
-    }
-
-    protected void stopTraceActivity() {
-        activityTracer.stopTrace();
-    }
-
-    protected String getLastActivity() {
-        return activityTracer.getLastActivity();
-    }
-
-    protected void setLastActivity(String lastActivity) {
-        this.activityTracer.setLastActivity(lastActivity);
+    public void sendEvent(final String event, final JSONObject payload) {
+        getSendEventUseCase().execute(event, payload);
     }
 
     /**
-     * Connection related events
+     * This method is used to indicate when the user has done login
+     *
+     * @param url the url to be displayed to the user
      */
-    protected void traceConnection() {
-        this.connectionTracer.trace(getConf());
+    public void loginExecuted(String url) {
+        getPerformLoginUseCase().execute(url);
     }
 
-    protected void registerWebView(NSRActivityWebView activityWebView) {
-        if (this.activityWebView != null)
-            this.activityWebView.finish();
-        this.activityWebView = activityWebView;
+    /**
+     * This method is used to indicate when the user has done payment
+     *
+     * @param paymentInfo the payment info
+     * @param url         the url to be displayed to the user
+     */
+    public void paymentExecuted(JSONObject paymentInfo, String url) {
+        getPaymentDoneUseCase().execute(paymentInfo, url);
     }
 
-    protected void clearWebView() {
-        this.activityWebView = null;
+    /**
+     * This method is called to display the insurance screen. For sending with extra parameters,
+     * please check {@link #showApp(JSONObject)}
+     */
+    public void showApp() {
+        getShowAppUseCase().execute();
     }
+
+    /**
+     * This method is used to display the insurance screen with extra parameters
+     *
+     * @param params the params to be passed
+     */
+    public void showApp(JSONObject params) {
+        getShowAppUseCase().execute(params);
+    }
+
+    /**
+     * This method is used to set the workflow delegate
+     *
+     * @param workflowDelegate workflow to be used
+     */
+    public void setWorkflowDelegate(NSRWorkflowDelegate workflowDelegate) {
+        guaranteeMinimalAndroidVersion();
+        getDataManager().getWorkflowRepository().setClass(workflowDelegate.getClass().getName());
+        dependencyProvider.setWorkflowDelegate(workflowDelegate);
+    }
+
+    /*
+      The section below contains methods that are not available for access over the public API.
+     */
+
+    /**
+     * Default constructor
+     *
+     * @param context the activity context
+     */
+    private NSR(Context context) {
+        this.context = context;
+        initDependencyProvider();
+    }
+
+    /**
+     * This method is used to initialize our dependency provider
+     */
+    private void initDependencyProvider() {
+        this.dependencyProvider = new DependencyProvider(context, this);
+    }
+
+
+    /*
+      Security related methods
+     */
 
     protected NSRSecurityDelegate getSecurityDelegate() {
-        return securityDelegate;
+        return dependencyProvider.getSecurityDelegate();
     }
 
-    public void setSecurityDelegate(NSRSecurityDelegate securityDelegate) {
-        if (isInvalidAndroidVersion) {
-            return;
-        }
-        getPersistenceManager().storeData("securityDelegateClass", securityDelegate.getClass().getName());
-        this.securityDelegate = securityDelegate;
+    protected void setSecurityDelegate(NSRSecurityDelegate securityDelegate) {
+        guaranteeMinimalAndroidVersion();
 
-        authManager = new AuthManager(context, securityDelegate, this);
+        getDataManager().getSecurityRepository().setClass(securityDelegate.getClass().getName());
+        dependencyProvider.setSecurityDelegate(securityDelegate);
+
+        getProcessorManager().getAuthProcessor().setSecurityDelegate(securityDelegate);
+        getProcessorManager().getRequestProcessor().setSecurityDelegate(securityDelegate);
     }
 
+
+    /**
+     * Workflow delegate methods
+     */
     protected NSRWorkflowDelegate getWorkflowDelegate() {
-        return workflowDelegate;
-    }
-
-    public void setWorkflowDelegate(NSRWorkflowDelegate workflowDelegate) {
-        if (isInvalidAndroidVersion) {
-            return;
-        }
-        getPersistenceManager().storeData("workflowDelegateClass", workflowDelegate.getClass().getName());
-        this.workflowDelegate = workflowDelegate;
-    }
-
-    public void setup(final JSONObject settings) {
-        if (isInvalidAndroidVersion) {
-            return;
-        }
-        Log.d(TAG, "setup");
-        try {
-            if (!settings.has("ns_lang")) {
-                settings.put("ns_lang", Locale.getDefault().getLanguage());
-            }
-            if (!settings.has("dev_mode")) {
-                settings.put("dev_mode", 0);
-            }
-            WebView.setWebContentsDebuggingEnabled(settings.getInt("dev_mode") != 0);
-
-            if (!settings.has("push_icon")) {
-                settings.put("push_icon", R.drawable.nsr_logo);
-            }
-            Log.d(TAG, "setup: " + settings);
-            setSettings(settings);
-            if (getPersistenceManager().retrieveData("permission_requested") == null && settings.has("ask_permission") && settings.getInt("ask_permission") == 1) {
-                getPersistenceManager().storeData("permission_requested", "*");
-                List<String> permissionsList = new ArrayList<String>();
-                if (ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                    permissionsList.add(Manifest.permission.ACCESS_FINE_LOCATION);
-                }
-                if (ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                    permissionsList.add(Manifest.permission.ACCESS_COARSE_LOCATION);
-                }
-                if (permissionsList.size() > 0) {
-                    ActivityCompat.requestPermissions((Activity) context, permissionsList.toArray(new String[permissionsList.size()]), NSR.PERMISSIONS_MULTIPLE_ACCESSLOCATION);
-                }
-            }
-        } catch (Exception e) {
-            Log.e(TAG, "setup", e);
-        }
-    }
-
-    public void registerUser(NSRUser user) {
-        if (isInvalidAndroidVersion) {
-            return;
-        }
-        Log.d(TAG, "registerUser");
-        try {
-            forgetUser();
-            setUser(user);
-            authManager.authorize(new NSRAuth() {
-                public void authorized(boolean authorized) throws Exception {
-                    Log.d(TAG, "registerUser: " + (authorized ? "" : "not ") + "authorized!");
-                }
-            }, makeAuthArguments());
-        } catch (Exception e) {
-            Log.e(TAG, "registerUser", e);
-        }
-    }
-
-    public void forgetUser() {
-        if (isInvalidAndroidVersion) {
-            return;
-        }
-        Log.d(TAG, "forgetUser");
-        setConf(null);
-        setAuth(null);
-        setAppURL(null);
-        setUser(null);
-        initJob();
-    }
-
-    private AuthArguments makeAuthArguments() {
-        AuthArguments authArguments = new AuthArguments.Builder()
-                .conf(getConf())
-                .auth(getAuth())
-                .os(getOs())
-                .version(getVersion())
-                .settings(getSettings())
-                .user(getUser())
-                .build();
-
-        return authArguments;
+        return dependencyProvider.getWorkflowDelegate();
     }
 
 
-    public void sendAction(final String name, final String policyCode, final String details) {
-        if (isInvalidAndroidVersion) {
-            return;
-        }
-        Log.d(TAG, "sendAction - name: " + name + " policyCode: " + policyCode + " details: " + details);
-        try {
-            authManager.authorize(new NSRAuth() {
-                public void authorized(boolean authorized) throws Exception {
-                    JSONObject requestPayload = new JSONObject();
+    /*
+      Repository related methods
+     */
 
-                    requestPayload.put("action", name);
-                    requestPayload.put("code", policyCode);
-                    requestPayload.put("details", details);
-                    requestPayload.put("timezone", TimeZone.getDefault().getID());
-                    requestPayload.put("action_time", System.currentTimeMillis());
-
-                    JSONObject headers = new JSONObject();
-                    String token = getToken();
-                    Log.d(TAG, "sendAction token: " + token);
-                    headers.put("ns_token", token);
-                    headers.put("ns_lang", getLang());
-
-                    getSecurityDelegate().secureRequest(context, "trace", requestPayload, headers, new NSRSecurityResponse() {
-                        public void completionHandler(JSONObject json, String error) throws Exception {
-                            if (error != null) {
-                                Log.e(TAG, "sendAction: " + error);
-                            } else {
-                                Log.d(TAG, "sendAction: " + json.toString());
-                            }
-                        }
-                    });
-                }
-            }, makeAuthArguments());
-        } catch (Exception e) {
-            Log.e(TAG, "sendAction", e);
-        }
+    protected ProcessorManager getProcessorManager() {
+        return dependencyProvider.getProcessorManager();
     }
 
-    protected void crunchEvent(final String event, final JSONObject payload) throws Exception {
-        JSONObject conf = getConf();
-        if (conf != null && conf.has("local_tracking") && conf.getBoolean("local_tracking")) {
-            Log.d(NSR.TAG, "crunchEvent: " + event + " payload: " + payload.toString());
-            if (eventWebView != null) {
-                eventWebView.crunchEvent(event, payload);
-            }
-        } else {
-            sendEvent(event, payload);
-        }
+    protected SettingsRepository getSettingsRepository() {
+        return getDataManager().getSettingsRepository();
     }
 
-    public void sendEvent(final String event, final JSONObject payload) {
-        if (isInvalidAndroidVersion) {
-            return;
-        }
-        Log.d(TAG, "sendEvent - event: " + event + " payload: " + payload);
-        try {
-            authManager.authorize(new NSRAuth() {
-                public void authorized(boolean authorized) throws Exception {
-                    if (!authorized) {
-                        return;
-                    }
-                    JSONObject eventPayLoad = new JSONObject();
-                    eventPayLoad.put("event", event);
-                    eventPayLoad.put("timezone", TimeZone.getDefault().getID());
-                    eventPayLoad.put("event_time", System.currentTimeMillis());
-                    eventPayLoad.put("payload", payload);
-
-                    JSONObject devicePayLoad = new JSONObject();
-                    devicePayLoad.put("uid", DeviceUtils.getDeviceUid(context));
-                    String pushToken = getPushToken();
-                    if (pushToken != null) {
-                        devicePayLoad.put("push_token", pushToken);
-                    }
-                    devicePayLoad.put("os", getOs());
-                    devicePayLoad.put("version", Build.VERSION.RELEASE + " " + Build.VERSION_CODES.class.getFields()[android.os.Build.VERSION.SDK_INT].getName());
-                    devicePayLoad.put("model", Build.MODEL);
-
-                    JSONObject requestPayload = new JSONObject();
-                    requestPayload.put("event", eventPayLoad);
-                    requestPayload.put("user", getUser().toJsonObject(false));
-                    requestPayload.put("device", devicePayLoad);
-
-                    JSONObject headers = new JSONObject();
-                    String token = getToken();
-                    Log.d(TAG, "sendEvent token: " + token);
-                    headers.put("ns_token", token);
-                    headers.put("ns_lang", getLang());
-
-                    Log.d(TAG, "requestPayload: " + requestPayload.toString());
-
-                    getSecurityDelegate().secureRequest(context, "event", requestPayload, headers, new NSRSecurityResponse() {
-                        public void completionHandler(JSONObject json, String error) throws Exception {
-                            if (error == null) {
-                                if (json.has("pushes")) {
-                                    boolean skipPush = !json.has("skipPush") || json.getBoolean("skipPush");
-                                    JSONArray pushes = json.getJSONArray("pushes");
-                                    if (!skipPush) {
-                                        if (pushes.length() > 0) {
-                                            JSONObject push = pushes.getJSONObject(0);
-                                            String imageUrl = push.has("imageUrl") ? push.getString("imageUrl") : null;
-                                            String url = push.has("url") ? push.getString("url") : null;
-                                            PendingIntent pendingIntent = (url != null && !"".equals(url)) ? PendingIntent.getActivity(context, (int) System.currentTimeMillis(), makeActivityWebView(url), PendingIntent.FLAG_UPDATE_CURRENT) : null;
-                                            NSRNotification.sendNotification(context, push.getString("title"), push.getString("body"), imageUrl, pendingIntent);
-                                        }
-                                    } else {
-                                        if (pushes.length() > 0) {
-                                            JSONObject notification = pushes.getJSONObject(0);
-                                            Log.d(TAG, notification.toString());
-                                            showUrl(notification.getString("url"));
-                                        }
-                                    }
-                                }
-                            } else {
-                                Log.e(TAG, "sendEvent secureRequest: " + error);
-                            }
-                        }
-                    });
-                }
-            }, makeAuthArguments());
-        } catch (Exception e) {
-            Log.e(TAG, "sendEvent", e);
-        }
+    protected AuthRepository getAuthRepository() {
+        return getDataManager().getAuthRepository();
     }
 
-    public void showApp() {
-        if (getAppURL() != null) {
-            showUrl(getAppURL(), null);
-        }
+
+    /*
+      Manager objects
+     */
+
+    protected TracerManager getTracerManager() {
+        return dependencyProvider.getTracerManager();
     }
 
-    public void showApp(JSONObject params) {
-        if (getAppURL() != null) {
-            showUrl(getAppURL(), params);
-        }
+    protected ActivityWebViewManager getActivityWebViewManager() {
+        return dependencyProvider.getActivityWebViewManager();
     }
 
-    public void showUrl(String url) {
-        showUrl(url, null);
+    protected JobManager getJobManager() {
+        return dependencyProvider.getJobManager();
     }
 
-    public synchronized void showUrl(String url, JSONObject params) {
-        if (isInvalidAndroidVersion) {
-            return;
-        }
-        try {
-            if (params != null && params.length() > 0) {
-                Iterator<String> keys = params.keys();
-                while (keys.hasNext()) {
-                    String key = keys.next();
-                    url += ((url.indexOf('?') < 0) ? "?" : "&") + key + "=" + URLEncoder.encode(params.getString(key), "UTF-8");
-                }
-            }
-            if (activityWebView != null) {
-                activityWebView.navigate(url);
-            } else {
-                context.startActivity(makeActivityWebView(url));
-                activityWebView.navigate(url);
-            }
-        } catch (Exception e) {
-            Log.e(TAG, "showUrl", e);
-        }
+    protected DataManager getDataManager() {
+        return dependencyProvider.getDataManager();
     }
 
-    protected Intent makeActivityWebView(String url) throws Exception {
-        Intent intent = new Intent(context, NSRActivityWebView.class);
-        intent.putExtra("url", url);
-        return intent;
+    /*
+      Use cases
+     */
+
+    /**
+     * Accessor for retrieving the use case for registering an user
+     *
+     * @return the {@link RegisterUser} use case
+     */
+    protected RegisterUser getRegisterUserUseCase() {
+        return dependencyProvider.getRegisterUserUseCase();
     }
 
-    protected NSRUser getUser() {
-        try {
-            JSONObject user = getPersistenceManager().retrieveJson("user");
-            return user != null ? new NSRUser(user) : null;
-        } catch (Exception e) {
-            Log.e(TAG, "getUser", e);
-            return null;
-        }
+    /**
+     * Accessor for retrieving the use case for forgetting an user
+     *
+     * @return the {@link ForgetUser} use case
+     */
+    protected ForgetUser getForgetUserUseCase() {
+        return dependencyProvider.getForgetUserUseCase();
     }
 
-    protected void setUser(NSRUser user) {
-        getPersistenceManager().storeJson("user", user == null ? null : user.toJsonObject(true));
+    /**
+     * Accessor for retrieving the use case for showing the insurance app
+     *
+     * @return the {@link ShowApp} use case
+     */
+    protected ShowApp getShowAppUseCase() {
+        return dependencyProvider.getShowAppUseCase();
     }
 
-    protected JSONObject getConf() {
-        return getPersistenceManager().retrieveJson("conf");
+    /**
+     * Accessor for retrieving the use case for sending an event
+     *
+     * @return the {@link SendEvent} use case
+     */
+    protected SendEvent getSendEventUseCase() {
+        return dependencyProvider.getSendEventUseCase();
     }
 
+    /**
+     * Accessor for retrieving the use case for showing the insurance app
+     *
+     * @return the {@link ShowApp} use case
+     */
+    protected PaymentDone getPaymentDoneUseCase() {
+        return dependencyProvider.getPaymentDoneUseCase();
+    }
+
+    /**
+     * Accessor for retrieving the use case for performing the login
+     *
+     * @return the {@link PerformLogin} use case
+     */
+    protected PerformLogin getPerformLoginUseCase() {
+        return dependencyProvider.getPerformLoginUseCase();
+    }
+
+
+    /**
+     * Auth listener related methods
+     *
+     * @param conf    current configuration
+     * @param oldConf old configuration
+     * @return if it needs to init the job
+     * @throws JSONException in case there's an issue parsing the json
+     */
     @Override
-    public void setConf(JSONObject conf) {
-        getPersistenceManager().storeJson("conf", conf);
+    public boolean needsInitJob(JSONObject conf, JSONObject oldConf) throws JSONException {
+        return getJobManager().needsInitJob(conf, oldConf);
     }
 
-    protected JSONObject getSettings() {
-        return getPersistenceManager().retrieveJson("settings");
-    }
-
-    protected void setSettings(JSONObject settings) {
-        getPersistenceManager().storeJson("settings", settings);
-    }
-
-    protected JSONObject getAuth() {
-        return getPersistenceManager().retrieveJson("auth");
-    }
-
+    /**
+     * This method is used to init our job
+     */
     @Override
-    public void setAuth(JSONObject auth) {
-        getPersistenceManager().storeJson("auth", auth);
-    }
-
-    protected String getToken() {
-        try {
-            return getAuth().getString("token");
-        } catch (Exception e) {
-            Log.e(TAG, "getToken", e);
-            return null;
-        }
-    }
-
-    protected String getPushToken() {
-        try {
-            return getSettings().getString("push_token");
-        } catch (Exception e) {
-            Log.e(TAG, "getPushToken", e);
-            return null;
-        }
-    }
-
-    protected String getLang() {
-        try {
-            return getSettings().getString("ns_lang");
-        } catch (Exception e) {
-            Log.e(TAG, "getLang", e);
-            return null;
-        }
-    }
-
-    protected String getAppURL() {
-        return getPersistenceManager().retrieveData("appURL");
-    }
-
-    @Override
-    public void setAppURL(String appURL) {
-        getPersistenceManager().storeData("appURL", appURL);
-    }
-
-    public PersistenceManager getPersistenceManager() {
-        return persistenceManager;
-    }
-
-    public void loginExecuted(String url) {
-        if (isInvalidAndroidVersion) {
-            return;
-        }
-        try {
-            JSONObject params = new JSONObject();
-            params.put("loginExecuted", "yes");
-            showUrl(url, params);
-        } catch (Exception e) {
-            Log.e(TAG, "loginExecuted", e);
-        }
-    }
-
-    public void paymentExecuted(JSONObject paymentInfo, String url) {
-        if (isInvalidAndroidVersion) {
-            return;
-        }
-        try {
-            JSONObject params = new JSONObject();
-            params.put("paymentExecuted", paymentInfo.toString());
-            showUrl(url, params);
-        } catch (Exception e) {
-            Log.e(TAG, "paymentExecuted", e);
-        }
-    }
-
-    @Override
-    public void onTraceDone(String traceType, JSONObject payload) {
-        try {
-            crunchEvent(traceType, payload);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void authorize(NSRAuth nsrAuth) {
-        try {
-            authManager.authorize(nsrAuth, makeAuthArguments());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    public void initJob() {
+        getJobManager().initJob();
     }
 }
