@@ -21,6 +21,16 @@ android {
     testOptions {
         unitTests.returnDefaultValues = true
     }
+
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        csv.enabled true
+        html.enabled true
+        html.destination "${buildDir}/jacocoHtml"
+    }
 }
 
 dependencies {
