@@ -1,5 +1,7 @@
 # ![](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Android_robot.svg/32px-Android_robot.svg.png) Android - Neosurance SDK 
 
+[![Build Status](https://travis-ci.org/bresan/android-sdk2.svg?branch=master)](https://travis-ci.org/bresan/android-sdk2) [![Known Vulnerabilities](https://snyk.io/test/github/bresan/android-sdk2/badge.svg)](https://snyk.io/test/github/bresan/android-sdk2) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/6e921f05223141b1985cfdf1671c3d32)](https://www.codacy.com/app/bresan/android-sdk2?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=bresan/android-sdk2&amp;utm_campaign=Badge_Grade) [![codecov](https://codecov.io/gh/bresan/android-sdk2/branch/master/graph/badge.svg)](https://codecov.io/gh/bresan/android-sdk2)
+
 - Collects info from device sensors and from the hosting app
 - Exchanges info with the AI engines
 - Sends the push notification

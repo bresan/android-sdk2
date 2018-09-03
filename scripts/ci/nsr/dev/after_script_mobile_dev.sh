@@ -3,3 +3,4 @@
 # Upload mobile app to crashlytics
 # ./gradlew :app:crashlyticsUploadDistributionDemoDebug
 # ./gradlew :app:crashlyticsUploadDistributionProDebug
+exit 0
