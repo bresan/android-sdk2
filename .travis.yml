@@ -1,0 +1,52 @@
+language: android
+dist: precise
+sudo: required
+jdk:
+- oraclejdk8
+env:
+  global:
+  - ANDROID_API_LEVEL=26
+  - ANDROID_API_LEVEL_22=22
+  - ANDROID_BUILD_TOOLS_VERSION=26.0.2
+  - ANDROID_ABI=armeabi-v7a
+  - ANDROID_TAG=google_apis
+  - ANDROID_TARGET=android-26
+  - ADB_INSTALL_TIMEOUT=20
+
+android:
+  components:
+  - tools
+  - platform-tools
+  - build-tools-$ANDROID_BUILD_TOOLS_VERSION
+  - tools
+  - android-$ANDROID_API_LEVEL
+  - addon-google_apis-google-$ANDROID_API_LEVEL
+  - extra-google-google_play_services
+  - extra-android-support
+  - extra-google-m2repository
+  - extra-android-m2repository
+  - android-sdk-license-.+
+  - sys-img-armeabi-v7a-google_apis-$ANDROID_API_LEVEL
+  - sys-img-armeabi-v7a-android-$ANDROID_API_LEVEL_22
+  licenses:
+  - android-sdk-preview-license-.+
+  - android-sdk-preview-license-52d11cd2
+  - android-sdk-license-.+
+  - google-gdk-license-.+
+
+before_install:
+# common
+- chmod +x ./scripts/ci/before_install.sh
+- chmod +x ./scripts/ci/after_success.sh
+
+# Mobile Dev
+- chmod +x ./scripts/ci/nsr/dev/install_mobile_dev.sh
+- chmod +x ./scripts/ci/nsr/dev/after_script_mobile_dev.sh
+
+- ./scripts/ci/before_install.sh
+
+script: ./scripts/ci/mobile/dev/install_mobile_dev.sh
+
+after_script: ./scripts/ci/mobile/dev/after_script_mobile_dev.sh
+
+after_success: ./scripts/ci/after_success.sh
