@@ -13,8 +13,13 @@ android {
 
     buildTypes {
         release {
+            testCoverageEnabled true
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            testCoverageEnabled true
         }
     }
 
@@ -22,15 +27,6 @@ android {
         unitTests.returnDefaultValues = true
     }
 
-}
-
-jacocoTestReport {
-    reports {
-        xml.enabled true
-        csv.enabled true
-        html.enabled true
-        html.destination "${buildDir}/jacocoHtml"
-    }
 }
 
 dependencies {
