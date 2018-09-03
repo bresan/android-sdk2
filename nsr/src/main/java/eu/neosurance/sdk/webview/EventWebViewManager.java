@@ -1,4 +1,4 @@
-package eu.neosurance.sdk.utils;
+package eu.neosurance.sdk.webview;
 
 import eu.neosurance.sdk.eventwebview.NSREventWebView;
 

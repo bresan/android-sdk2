@@ -25,11 +25,7 @@ public class RegisterUser implements DefaultUseCase<NSRUser> {
         Log.d(TAG, "registerUser");
         try {
             userRepository.setUser(user);
-            authProcessor.authorize(new NSRAuth() {
-                public void authorized(boolean authorized) throws Exception {
-                    Log.d(TAG, "registerUser: " + (authorized ? "" : "not ") + "authorized!");
-                }
-            });
+            authProcessor.authorize();
         } catch (Exception e) {
             Log.e(TAG, "registerUser", e);
         }

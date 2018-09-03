@@ -3,14 +3,13 @@ package eu.neosurance.sdk.processors;
 import android.content.Context;
 
 import eu.neosurance.sdk.data.DataManager;
-import eu.neosurance.sdk.job.JobManager;
 import eu.neosurance.sdk.processors.action.ActionProcessor;
 import eu.neosurance.sdk.processors.auth.AuthListener;
 import eu.neosurance.sdk.processors.auth.AuthProcessor;
 import eu.neosurance.sdk.processors.event.EventProcessor;
 import eu.neosurance.sdk.processors.request.RequestProcessor;
-import eu.neosurance.sdk.utils.ActivityWebViewManager;
-import eu.neosurance.sdk.utils.EventWebViewManager;
+import eu.neosurance.sdk.webview.ActivityWebViewManager;
+import eu.neosurance.sdk.webview.EventWebViewManager;
 
 public class ProcessorManager {
 

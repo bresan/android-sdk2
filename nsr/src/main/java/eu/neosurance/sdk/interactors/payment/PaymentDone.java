@@ -4,7 +4,7 @@ import android.util.Log;
 
 import org.json.JSONObject;
 
-import eu.neosurance.sdk.utils.ActivityWebViewManager;
+import eu.neosurance.sdk.webview.ActivityWebViewManager;
 import eu.neosurance.sdk.utils.PrecheckUtils;
 
 public class PaymentDone {

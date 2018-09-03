@@ -19,8 +19,8 @@ import eu.neosurance.sdk.NSRJobService;
 import eu.neosurance.sdk.data.DataManager;
 import eu.neosurance.sdk.processors.ProcessorManager;
 import eu.neosurance.sdk.tracer.TracerManager;
-import eu.neosurance.sdk.utils.ActivityWebViewManager;
-import eu.neosurance.sdk.utils.EventWebViewManager;
+import eu.neosurance.sdk.webview.ActivityWebViewManager;
+import eu.neosurance.sdk.webview.EventWebViewManager;
 
 public class JobManager {
 

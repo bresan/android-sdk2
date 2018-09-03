@@ -16,8 +16,8 @@ import eu.neosurance.sdk.job.JobManager;
 import eu.neosurance.sdk.processors.ProcessorManager;
 import eu.neosurance.sdk.processors.auth.AuthListener;
 import eu.neosurance.sdk.tracer.TracerManager;
-import eu.neosurance.sdk.utils.ActivityWebViewManager;
-import eu.neosurance.sdk.utils.EventWebViewManager;
+import eu.neosurance.sdk.webview.ActivityWebViewManager;
+import eu.neosurance.sdk.webview.EventWebViewManager;
 
 public class DependencyProvider {
 

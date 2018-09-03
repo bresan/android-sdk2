@@ -3,7 +3,7 @@ package eu.neosurance.sdk.interactors.app;
 import org.json.JSONObject;
 
 import eu.neosurance.sdk.data.app.AppUrlRepository;
-import eu.neosurance.sdk.utils.ActivityWebViewManager;
+import eu.neosurance.sdk.webview.ActivityWebViewManager;
 
 public class ShowApp {
 
@@ -17,14 +17,18 @@ public class ShowApp {
     }
 
     public void execute() {
-        if (appUrlRepository.getAppURL() != null) {
+        if (isValidUrl(appUrlRepository.getAppURL())) {
             activityWebViewManager.showUrl(appUrlRepository.getAppURL(), null);
         }
     }
 
     public void execute(JSONObject params) {
-        if (appUrlRepository.getAppURL() != null) {
+        if (isValidUrl(appUrlRepository.getAppURL())) {
             activityWebViewManager.showUrl(appUrlRepository.getAppURL(), params);
         }
+    }
+
+    public boolean isValidUrl(String url) {
+        return url != null;
     }
 }

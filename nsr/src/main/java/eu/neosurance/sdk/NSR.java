@@ -1,7 +1,6 @@
 package eu.neosurance.sdk;
 
 import android.content.Context;
-import android.util.Log;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -19,7 +18,7 @@ import eu.neosurance.sdk.job.JobManager;
 import eu.neosurance.sdk.processors.ProcessorManager;
 import eu.neosurance.sdk.processors.auth.AuthListener;
 import eu.neosurance.sdk.tracer.TracerManager;
-import eu.neosurance.sdk.utils.ActivityWebViewManager;
+import eu.neosurance.sdk.webview.ActivityWebViewManager;
 import eu.neosurance.sdk.utils.SetupUtils;
 
 import static eu.neosurance.sdk.utils.PrecheckUtils.guaranteeMinimalAndroidVersion;
@@ -59,7 +58,8 @@ public class NSR implements AuthListener {
      * @param settings the JSON object with the settings to be used
      */
     public void setup(final JSONObject settings) {
-        SetupUtils.performSetup(context, getDataManager(), settings, Constants.PERMISSIONS_MULTIPLE_ACCESSLOCATION);
+        SetupUtils.performSetup(context, getDataManager(), settings,
+                Constants.PERMISSIONS_MULTIPLE_ACCESSLOCATION);
     }
 
     /**

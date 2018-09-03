@@ -18,7 +18,7 @@ import eu.neosurance.sdk.eventwebview.NSREventWebView;
 import eu.neosurance.sdk.NSRNotification;
 import eu.neosurance.sdk.data.DataManager;
 import eu.neosurance.sdk.processors.auth.AuthProcessor;
-import eu.neosurance.sdk.utils.ActivityWebViewManager;
+import eu.neosurance.sdk.webview.ActivityWebViewManager;
 import eu.neosurance.sdk.utils.DeviceUtils;
 import eu.neosurance.sdk.processors.request.RequestProcessor;
 import eu.neosurance.sdk.utils.PrecheckUtils;

@@ -16,13 +16,12 @@ import org.json.JSONObject;
 import java.util.List;
 import java.util.Locale;
 
-import eu.neosurance.sdk.NSR;
 import eu.neosurance.sdk.NSRAuth;
 import eu.neosurance.sdk.NSRNotification;
 import eu.neosurance.sdk.data.DataManager;
 import eu.neosurance.sdk.processors.ProcessorManager;
 import eu.neosurance.sdk.processors.request.RequestProcessor;
-import eu.neosurance.sdk.utils.ActivityWebViewManager;
+import eu.neosurance.sdk.webview.ActivityWebViewManager;
 import eu.neosurance.sdk.utils.DeviceUtils;
 
 public class NSREventWebView {

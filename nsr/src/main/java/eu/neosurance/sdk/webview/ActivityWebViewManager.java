@@ -1,4 +1,4 @@
-package eu.neosurance.sdk.utils;
+package eu.neosurance.sdk.webview;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,9 +10,10 @@ import java.net.URLEncoder;
 import java.util.Iterator;
 
 import eu.neosurance.sdk.NSRActivityWebView;
+import eu.neosurance.sdk.utils.PrecheckUtils;
 
 
-public class ActivityWebViewManager {
+public class ActivityWebViewManager  {
 
     private static final String TAG = ActivityWebViewManager.class.getCanonicalName();
 

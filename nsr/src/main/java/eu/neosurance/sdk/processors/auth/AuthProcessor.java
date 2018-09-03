@@ -11,8 +11,7 @@ import eu.neosurance.sdk.NSRSecurityDelegate;
 import eu.neosurance.sdk.NSRSecurityResponse;
 import eu.neosurance.sdk.NSRUser;
 import eu.neosurance.sdk.data.DataManager;
-import eu.neosurance.sdk.job.JobManager;
-import eu.neosurance.sdk.utils.EventWebViewManager;
+import eu.neosurance.sdk.webview.EventWebViewManager;
 
 public class AuthProcessor {
 
@@ -37,6 +36,15 @@ public class AuthProcessor {
 
     public void setSecurityDelegate(NSRSecurityDelegate securityDelegate) {
         this.securityDelegate = securityDelegate;
+    }
+
+    public void authorize() throws Exception {
+        authorize(new NSRAuth() {
+            @Override
+            public void authorized(boolean authorized) throws Exception {
+
+            }
+        });
     }
 
     public void authorize(final NSRAuth delegate) throws Exception {

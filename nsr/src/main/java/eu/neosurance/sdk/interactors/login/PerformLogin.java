@@ -1,10 +1,9 @@
 package eu.neosurance.sdk.interactors.login;
 
-import android.util.Log;
-
+import org.json.JSONException;
 import org.json.JSONObject;
 
-import eu.neosurance.sdk.utils.ActivityWebViewManager;
+import eu.neosurance.sdk.webview.ActivityWebViewManager;
 import eu.neosurance.sdk.utils.PrecheckUtils;
 
 public class PerformLogin {
@@ -18,11 +17,16 @@ public class PerformLogin {
     public void execute(String url) {
         PrecheckUtils.guaranteeMinimalAndroidVersion();
         try {
-            JSONObject params = new JSONObject();
-            params.put("loginExecuted", "yes");
-            activityWebViewManager.showUrl(url, params);
+            activityWebViewManager.showUrl(url, buildParams());
         } catch (Exception e) {
-            Log.e(TAG, "loginExecuted", e);
+//            Log.e(TAG, "loginExecuted", e);
         }
+    }
+
+    public JSONObject buildParams() throws JSONException {
+        JSONObject params = new JSONObject();
+        params.put("loginExecuted", "yes");
+
+        return params;
     }
 }

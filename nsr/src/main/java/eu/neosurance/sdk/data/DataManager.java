@@ -1,5 +1,7 @@
 package eu.neosurance.sdk.data;
 
+import android.support.annotation.VisibleForTesting;
+
 import eu.neosurance.sdk.data.app.AppUrlRepository;
 import eu.neosurance.sdk.data.auth.AuthRepository;
 import eu.neosurance.sdk.data.configuration.ConfigurationRepository;
@@ -68,4 +70,6 @@ public class DataManager {
     public UserRepository getUserRepository() {
         return userRepository;
     }
+
+
 }
