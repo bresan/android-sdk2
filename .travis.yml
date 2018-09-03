@@ -45,8 +45,8 @@ before_install:
 
 - ./scripts/ci/before_install.sh
 
-script: ./scripts/ci/mobile/dev/install_mobile_dev.sh
+script: ./scripts/ci/nsr/dev/install_mobile_dev.sh
 
-after_script: ./scripts/ci/mobile/dev/after_script_mobile_dev.sh
+after_script: ./scripts/ci/nsr/dev/after_script_mobile_dev.sh
 
 after_success: ./scripts/ci/after_success.sh
